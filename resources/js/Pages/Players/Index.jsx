@@ -3,7 +3,7 @@ import Main from "@/Layouts/MainLayout";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { playerColumn } from "@/Config/columsConfig.jsx";
 import { usePage } from "@inertiajs/react";
-import EditIndex from "./Edit/EditIndex";
+import EditIndex from "../../Components/Edit/EditIndex";
 import { useState } from "react";
 import { router } from "@inertiajs/react";
 import Swal from "sweetalert2";

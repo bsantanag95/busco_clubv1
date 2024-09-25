@@ -2,7 +2,7 @@ import Authenticated from "@/Layouts/AuthenticatedLayout";
 import Table from "@/Components/Table";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { clubsConfig } from "@/Config/clubsConfig";
-import EditClub from "@/Pages/Clubs/EditClub";
+import EditClub from "@/Components/Edit/EditClub";
 import Swal from "sweetalert2";
 import { router } from "@inertiajs/react";
 import { useState } from "react";

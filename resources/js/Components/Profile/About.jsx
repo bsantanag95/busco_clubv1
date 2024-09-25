@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import es from "dayjs/locale/es";
-import EditAbout from "@/Pages/Players/Edit/EditAbout";
+import EditAbout from "@/Components/Edit/EditAbout";
 import { useState } from "react";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 

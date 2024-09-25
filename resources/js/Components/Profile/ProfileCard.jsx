@@ -3,7 +3,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import es from "dayjs/locale/es";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { useState } from "react";
-import EditProfileCard from "@/Pages/Players/Edit/EditProfileCard";
+import EditProfileCard from "@/Components/Edit/EditProfileCard";
 
 dayjs.locale(es);
 dayjs.extend(relativeTime);
