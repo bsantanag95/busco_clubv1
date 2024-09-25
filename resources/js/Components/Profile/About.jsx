@@ -126,22 +126,40 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                         )}
                     {player.status === "3" &&
                         player.transfers &&
-                        player.transfers[0] &&
-                        player.transfers[0].club && (
+                        player.transfers.length > 0 &&
+                        player.transfers[player.transfers.length - 1].club && (
                             <div className="grid grid-cols-2">
                                 <div className="px-4 py-2 font-semibold">
                                     Nuevo club
                                 </div>
                                 <div className="px-4 py-2 flex space-x-2">
                                     <img
-                                        src={`/storage/${player.transfers[0].club.logo}`}
+                                        src={`/storage/${
+                                            player.transfers[
+                                                player.transfers.length - 1
+                                            ].club.logo
+                                        }`}
                                         className="w-6 h-5 rounded-full mr-2"
-                                        alt={`Logo del club ${player.transfers[0].club.name}`}
+                                        alt={`Logo del club ${
+                                            player.transfers[
+                                                player.transfers.length - 1
+                                            ].club.name
+                                        }`}
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                        }}
                                     />
-                                    <b>{player.transfers[0].club.name}</b>
+                                    <b>
+                                        {
+                                            player.transfers[
+                                                player.transfers.length - 1
+                                            ].club.name
+                                        }
+                                    </b>
                                 </div>
                             </div>
                         )}
+
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">
                             Redes Sociales

@@ -39,6 +39,7 @@ class TransferController extends Controller
 
             $player = Player::find($request->player_id);
             $player->status = "3";
+            $player->last_club_id = $request->club_id;
             $player->save();
         });
 
@@ -70,12 +71,18 @@ class TransferController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->first();
 
+            if ($latestTransfer) {
+                $player->last_club_id = $latestTransfer->club_id;
+            } else {
+                $player->last_club_id = null;
+            }
+
             if (!$latestTransfer || $latestTransfer->created_at < $transfer->created_at) {
                 if ($player->status === "3") {
                     $player->status = "2";
-                    $player->save();
                 }
             }
+            $player->save();
         });
 
         return redirect()->back()->with('success', 'Transferencia eliminada exitosamente. El estado del jugador ha sido actualizado.');

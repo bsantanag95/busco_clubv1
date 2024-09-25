@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Player;
 use App\Models\Position;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -175,6 +176,7 @@ class PlayerController extends Controller
         ]);
 
         $player->status = $validated['status'];
+        $player->inactive_date = Carbon::now();
         $player->save();
 
         return redirect()->back()->with('success', 'El estado del jugador ha sido actualizado.');
