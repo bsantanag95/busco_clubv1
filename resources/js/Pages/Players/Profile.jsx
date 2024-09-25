@@ -86,7 +86,7 @@ const Profile = ({
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
-                                <Trajectory player={player} />
+                                <Trajectory player={player} user={auth.user} />
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">

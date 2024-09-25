@@ -1,4 +1,4 @@
-import CreateClubForm from "@/Components/CreateClubForm";
+import CreateClubForm from "@/Components/Create/CreateClubForm";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 
 const CreateClub = ({ auth, nationalities }) => {

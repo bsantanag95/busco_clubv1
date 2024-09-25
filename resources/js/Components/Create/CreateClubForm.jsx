@@ -3,11 +3,11 @@ import { useForm } from "@inertiajs/react";
 import { ToastContainer, Zoom, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import InputLabel from "./InputLabel";
-import PrimaryButton from "./PrimaryButton";
-import TextInput from "./TextInput";
-import FileInput from "./FileInput";
-import InputError from "./InputError";
+import InputLabel from "../InputLabel";
+import PrimaryButton from "../PrimaryButton";
+import TextInput from "../TextInput";
+import FileInput from "../FileInput";
+import InputError from "../InputError";
 
 const CreateClubForm = ({ nationalities }) => {
     const { data, setData, post, processing, reset, errors } = useForm({

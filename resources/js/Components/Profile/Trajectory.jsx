@@ -1,4 +1,18 @@
-const Trajectory = ({ player }) => {
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
+import { useState } from "react";
+
+const Trajectory = ({ player, user }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleEdit = () => {
+        setIsModalOpen(true);
+    };
+
     const removeSeasonPrefix = (season) => {
         return season.replace("Temporada ", "");
     };
@@ -23,7 +37,26 @@ const Trajectory = ({ player }) => {
                                 />
                             </svg>
                         </span>
-                        <span className="tracking-wide">Clubes</span>
+                        <span className="tracking-wide flex items-center">
+                            Clubes
+                            {user && (
+                                <button
+                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                    title="Editar perfil"
+                                    onClick={handleEdit}
+                                >
+                                    <EditOutlinedIcon
+                                        style={{ fontSize: "1.2rem" }}
+                                    />
+                                </button>
+                            )}
+                            {isModalOpen && (
+                                <EditTrajectoryClubs
+                                    player={player}
+                                    onClose={closeModal}
+                                />
+                            )}
+                        </span>
                     </div>
                     {player.statistics.filter((p) => p.level === "senior")
                         .length > 0 ? (
