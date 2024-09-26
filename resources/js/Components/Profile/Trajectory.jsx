@@ -1,8 +1,8 @@
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
+import CreateTrajectoryClubs from "../Create/CreateTrajectoryClubs";
 import { useState } from "react";
 
-const Trajectory = ({ player, user }) => {
+const Trajectory = ({ player, user, clubs, seasons }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const closeModal = () => {
@@ -51,8 +51,10 @@ const Trajectory = ({ player, user }) => {
                                 </button>
                             )}
                             {isModalOpen && (
-                                <EditTrajectoryClubs
+                                <CreateTrajectoryClubs
                                     player={player}
+                                    clubs={clubs}
+                                    seasons={seasons}
                                     onClose={closeModal}
                                 />
                             )}

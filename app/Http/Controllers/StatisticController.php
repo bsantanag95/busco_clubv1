@@ -28,7 +28,19 @@ class StatisticController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'player_id' => 'required|exists:players,id',
+            'club_id' => 'required|exists:clubs,id',
+            'season_id' => 'required|exists:seasons,id',
+        ]);
+        Statistic::create([
+            'player_id' => $request->player_id,
+            'club_id' => $request->club_id,
+            'season_id' => $request->season_id,
+            'level' => $request->level
+        ]);
+
+        return redirect()->back()->with('success', 'Estadistica creada exitosamente');
     }
 
     /**

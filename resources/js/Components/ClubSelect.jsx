@@ -26,7 +26,13 @@ const ClubSingleValue = (props) => (
     </components.SingleValue>
 );
 
-const ClubSelect = ({ clubs, data, setData, fieldName }) => {
+const ClubSelect = ({
+    clubs,
+    data,
+    setData,
+    fieldName,
+    menuPlacement = "top",
+}) => {
     const clubOptions = clubs.map((club) => ({
         value: club.id,
         label: club.name,
@@ -102,7 +108,7 @@ const ClubSelect = ({ clubs, data, setData, fieldName }) => {
                 (option) => option.value === data[fieldName]
             )}
             onChange={handleChange}
-            menuPlacement="top"
+            menuPlacement={menuPlacement}
             menuPosition="fixed"
             isSearchable={true}
             styles={customStyles}

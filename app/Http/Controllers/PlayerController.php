@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Player;
 use App\Models\Position;
+use App\Models\Season;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -85,8 +86,9 @@ class PlayerController extends Controller
         $positions = Position::all()->toArray();
         $clubs = app(ClubController::class)->getClubs();
         $randomPlayers = Player::all()->where('status', Player::BUSCANDO)->random(6);
+        $seasons = Season::all()->toArray();
 
-        return Inertia::render('Players/Profile', ['player' => $player, 'randomPlayers' => $randomPlayers, 'nationalities' => $nationalities, 'positions' => $positions, 'clubs' => $clubs]);
+        return Inertia::render('Players/Profile', ['player' => $player, 'randomPlayers' => $randomPlayers, 'nationalities' => $nationalities, 'positions' => $positions, 'clubs' => $clubs, 'seasons' => $seasons]);
     }
 
     public function edit(Player $player)

@@ -4,6 +4,7 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransferController;
 use App\Models\Player;
 use Illuminate\Foundation\Application;
@@ -29,6 +30,7 @@ Route::get('/new-player', function () {
 })->middleware(['auth', 'verified'])->name('new-player');
 Route::get('/new-player', [PositionController::class, 'index'])->middleware(['auth', 'verified'])->name('new-player');
 Route::post('/players', [PlayerController::class, 'store'])->middleware(['auth', 'verified'])->name('players.store');
+Route::post('/statistics', [StatisticController::class, 'store'])->middleware(['auth', 'verified'])->name('statistics.store');
 Route::post('/transfers', [TransferController::class, 'store'])->middleware(['auth', 'verified'])->name('transfers.store');
 Route::delete('/transfers/{transfer}', [TransferController::class, 'destroy'])->middleware(['auth', 'verified'])->name('transfers.destroy');
 

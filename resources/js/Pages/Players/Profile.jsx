@@ -19,6 +19,7 @@ const Profile = ({
     nationalities,
     positions,
     clubs,
+    seasons,
 }) => {
     const { auth } = usePage().props;
     const Layout = auth.user ? Authenticated : Main;
@@ -86,7 +87,12 @@ const Profile = ({
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
-                                <Trajectory player={player} user={auth.user} />
+                                <Trajectory
+                                    player={player}
+                                    user={auth.user}
+                                    clubs={clubs}
+                                    seasons={seasons}
+                                />
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
