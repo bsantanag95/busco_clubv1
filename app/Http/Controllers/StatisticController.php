@@ -64,7 +64,14 @@ class StatisticController extends Controller
      */
     public function update(Request $request, Statistic $statistic)
     {
-        //
+        $validated = $request->validate([
+            'club_id' => 'required|exists:clubs,id',
+            'season_id' => 'required|exists:seasons,id',
+        ]);
+
+        $statistic->update($validated);
+
+        return redirect()->back()->with('success', 'Estadistica actualizada exitosamente');
     }
 
     /**
@@ -72,6 +79,7 @@ class StatisticController extends Controller
      */
     public function destroy(Statistic $statistic)
     {
-        //
+        $statistic->delete();
+        return redirect()->back()->with('success', 'Estadistica creada exitosamente');
     }
 }

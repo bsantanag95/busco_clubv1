@@ -28,7 +28,23 @@ class NationalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category' => 'required|string',
+            'description' => 'required|string|max:191',
+            'first_year' => 'required|integer|min:1990|max:' . date('Y'),
+            'last_year' => 'required|integer|min:1990|max:' . date('Y') . '|gte:first_year',
+            'nationality_id' => 'required|exists:nationalities,id',
+        ]);
+        National::create([
+            'player_id' => $request->player_id,
+            'category' => $request->category,
+            'description' => $request->description,
+            'first_year' => $request->first_year,
+            'last_year' => $request->last_year,
+            'nationality_id' => $request->nationality_id
+        ]);
+
+        return redirect()->back()->with('success', 'Selección nacional creada exitosamente');
     }
 
     /**
@@ -52,7 +68,17 @@ class NationalController extends Controller
      */
     public function update(Request $request, National $national)
     {
-        //
+        $validated = $request->validate([
+            'category' => 'required|string',
+            'description' => 'required|string|max:191',
+            'first_year' => 'required|integer|min:1990|max:' . date('Y'),
+            'last_year' => 'required|integer|min:1990|max:' . date('Y') . '|gte:first_year',
+            'nationality_id' => 'required|exists:nationalities,id',
+        ]);
+
+        $national->update($validated);
+
+        return redirect()->back()->with('success', 'Selección nacional creada exitosamente');
     }
 
     /**
@@ -60,6 +86,7 @@ class NationalController extends Controller
      */
     public function destroy(National $national)
     {
-        //
+        $national->delete();
+        return redirect()->back()->with('success', 'Estadistica creada exitosamente');
     }
 }

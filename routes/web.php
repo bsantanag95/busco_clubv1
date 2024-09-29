@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\NationalController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransferController;
-use App\Models\Player;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,8 +29,13 @@ Route::get('/new-player', function () {
     return Inertia::render('Players/CreatePlayer');
 })->middleware(['auth', 'verified'])->name('new-player');
 Route::get('/new-player', [PositionController::class, 'index'])->middleware(['auth', 'verified'])->name('new-player');
+Route::delete('/nationals/{national}', [NationalController::class, 'destroy'])->middleware(['auth', 'verified'])->name('nationals.destroy');
+Route::post('/nationals', [NationalController::class, 'store'])->middleware(['auth', 'verified'])->name('nationals.store');
+Route::patch('/nationals/{national}', [NationalController::class, 'update'])->middleware(['auth', 'verified'])->name('nationals.update');
 Route::post('/players', [PlayerController::class, 'store'])->middleware(['auth', 'verified'])->name('players.store');
 Route::post('/statistics', [StatisticController::class, 'store'])->middleware(['auth', 'verified'])->name('statistics.store');
+Route::delete('/statistics/{statistic}', [StatisticController::class, 'destroy'])->middleware(['auth', 'verified'])->name('statistics.destroy');
+Route::patch('/statistics/{statistic}', [StatisticController::class, 'update'])->middleware(['auth', 'verified'])->name('statistics.update');
 Route::post('/transfers', [TransferController::class, 'store'])->middleware(['auth', 'verified'])->name('transfers.store');
 Route::delete('/transfers/{transfer}', [TransferController::class, 'destroy'])->middleware(['auth', 'verified'])->name('transfers.destroy');
 

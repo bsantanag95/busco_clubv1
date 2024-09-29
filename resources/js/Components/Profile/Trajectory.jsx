@@ -1,21 +1,22 @@
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import CreateTrajectoryClubs from "../Create/CreateTrajectoryClubs";
 import { useState } from "react";
+import PlayerStatisticItem from "./PlayerStatisticItem";
+import CreateTrajectoryNationalTeam from "../Create/CreateTrajectoryNationalTeam";
+import PlayerNationalItem from "./PlayerNationalItem";
 
-const Trajectory = ({ player, user, clubs, seasons }) => {
+const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [openLevel, setOpenLevel] = useState(null);
 
     const closeModal = () => {
-        setIsModalOpen(false);
+        setOpenLevel(null);
     };
 
-    const handleEdit = () => {
-        setIsModalOpen(true);
+    const handleEdit = (level) => {
+        setOpenLevel(level);
     };
 
-    const removeSeasonPrefix = (season) => {
-        return season.replace("Temporada ", "");
-    };
     return (
         <div className="bg-white p-3 shadow-sm rounded-sm">
             <div className="grid grid-cols-2">
@@ -43,68 +44,30 @@ const Trajectory = ({ player, user, clubs, seasons }) => {
                                 <button
                                     className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
                                     title="Editar perfil"
-                                    onClick={handleEdit}
+                                    onClick={() => handleEdit("senior")}
                                 >
                                     <EditOutlinedIcon
                                         style={{ fontSize: "1.2rem" }}
                                     />
                                 </button>
                             )}
-                            {isModalOpen && (
+                            {openLevel === "senior" && (
                                 <CreateTrajectoryClubs
                                     player={player}
-                                    clubs={clubs}
                                     seasons={seasons}
+                                    clubs={clubs}
+                                    level="senior"
                                     onClose={closeModal}
                                 />
                             )}
                         </span>
                     </div>
-                    {player.statistics.filter((p) => p.level === "senior")
-                        .length > 0 ? (
-                        player.statistics
-                            .filter((p) => p.level === "senior")
-                            .sort((a, b) => {
-                                if (a.season && b.season) {
-                                    return (
-                                        a.season.season_number -
-                                        b.season.season_number
-                                    );
-                                }
-                                return 0;
-                            })
-                            .map((p, i) => (
-                                <ul key={i} className="list-inside space-y-2">
-                                    <li>
-                                        <div className="text-teal-600 px-2 py-1 flex items-center space-x-10">
-                                            <span>
-                                                {p.season
-                                                    ? removeSeasonPrefix(
-                                                          p.season.season
-                                                      )
-                                                    : "Sin informacion de temporadas"}
-                                            </span>
-                                            {p.club && p.club.logo ? (
-                                                <div className="flex items-center space-x-2 ml-auto">
-                                                    <img
-                                                        src={`/storage/${p.club.logo}`}
-                                                        className="w-6 h-5 rounded-full mr-2"
-                                                        alt={`${p.club.name} logo`}
-                                                    />
-                                                    <span>{p.club.name}</span>
-                                                </div>
-                                            ) : (
-                                                <div>Logo no disponible</div>
-                                            )}
-                                        </div>
-                                    </li>
-                                </ul>
-                            ))
-                    ) : (
-                        <div className="text-teal-600 px-2 py-1">
-                            No posee registros
-                        </div>
-                    )}
+                    <PlayerStatisticItem
+                        player={player}
+                        seasons={seasons}
+                        clubs={clubs}
+                        level="senior"
+                    />
                 </div>
                 <div>
                     <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
@@ -175,53 +138,36 @@ const Trajectory = ({ player, user, clubs, seasons }) => {
                                 />
                             </svg>
                         </span>
-                        <span className="tracking-wide">Inferiores</span>
+                        <span className="tracking-wide flex items-center">
+                            Inferiores
+                            {user && (
+                                <button
+                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                    title="Editar perfil"
+                                    onClick={() => handleEdit("youth")}
+                                >
+                                    <EditOutlinedIcon
+                                        style={{ fontSize: "1.2rem" }}
+                                    />
+                                </button>
+                            )}
+                            {openLevel === "youth" && (
+                                <CreateTrajectoryClubs
+                                    player={player}
+                                    seasons={seasons}
+                                    clubs={clubs}
+                                    level="youth"
+                                    onClose={closeModal}
+                                />
+                            )}
+                        </span>
                     </div>
-                    {player.statistics.filter((p) => p.level === "youth")
-                        .length > 0 ? (
-                        player.statistics
-                            .filter((p) => p.level === "youth")
-                            .sort((a, b) => {
-                                if (a.season && b.season) {
-                                    return (
-                                        a.season.season_number -
-                                        b.season.season_number
-                                    );
-                                }
-                                return 0;
-                            })
-                            .map((p, i) => (
-                                <ul key={i} className="list-inside space-y-2">
-                                    <li>
-                                        <div className="text-teal-600 px-2 py-1 flex items-center space-x-10">
-                                            <span>
-                                                {p.season
-                                                    ? removeSeasonPrefix(
-                                                          p.season.season
-                                                      )
-                                                    : "Sin informacion de temporadas"}
-                                            </span>
-                                            {p.club && p.club.logo ? (
-                                                <div className="flex items-center space-x-2 ml-auto">
-                                                    <img
-                                                        src={`/storage/${p.club.logo}`}
-                                                        className="w-6 h-5 rounded-full mr-2"
-                                                        alt={`${p.club.name} logo`}
-                                                    />
-                                                    <span>{p.club.name}</span>
-                                                </div>
-                                            ) : (
-                                                <div>Logo no disponible</div>
-                                            )}
-                                        </div>
-                                    </li>
-                                </ul>
-                            ))
-                    ) : (
-                        <div className="text-teal-600 px-2 py-1">
-                            No hizo inferiores en ningún club
-                        </div>
-                    )}
+                    <PlayerStatisticItem
+                        player={player}
+                        seasons={seasons}
+                        clubs={clubs}
+                        level="youth"
+                    />
                 </div>
                 <div>
                     <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3 mt-6">
@@ -247,37 +193,32 @@ const Trajectory = ({ player, user, clubs, seasons }) => {
                                 />
                             </svg>
                         </span>
-                        <span className="tracking-wide">
+                        <span className="tracking-wide flex items-center">
                             Selección Nacional
+                            {user && (
+                                <button
+                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                    title="Editar perfil"
+                                    onClick={() => handleEdit("nationals")}
+                                >
+                                    <EditOutlinedIcon
+                                        style={{ fontSize: "1.2rem" }}
+                                    />
+                                </button>
+                            )}
+                            {openLevel === "nationals" && (
+                                <CreateTrajectoryNationalTeam
+                                    player={player}
+                                    nationalities={nationalities}
+                                    onClose={closeModal}
+                                />
+                            )}
                         </span>
                     </div>
-                    {player.nationals.length > 0 ? (
-                        player.nationals.map((p, i) => (
-                            <ul key={i} className="list-inside space-y-2">
-                                <li>
-                                    <div className="text-teal-600 px-2 py-1 flex items-center space-x-10">
-                                        <span>{p.year}</span>
-                                        {p.nationality && p.nationality.flag ? (
-                                            <div className="flex items-center space-x-2 ml-auto">
-                                                <img
-                                                    src={`/storage/${p.nationality.flag}`}
-                                                    className="w-6 h-5 rounded-full mr-2"
-                                                    alt={`${p.nationality.country} logo`}
-                                                />
-                                                <span>{p.name}</span>
-                                            </div>
-                                        ) : (
-                                            <div>Bandera no disponible</div>
-                                        )}
-                                    </div>
-                                </li>
-                            </ul>
-                        ))
-                    ) : (
-                        <div className="text-teal-600 px-2 py-1">
-                            Nunca ha estado en una selección
-                        </div>
-                    )}
+                    <PlayerNationalItem
+                        player={player}
+                        nationalities={nationalities}
+                    />
                 </div>
             </div>
         </div>

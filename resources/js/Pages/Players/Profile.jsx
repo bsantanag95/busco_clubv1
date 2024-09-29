@@ -92,6 +92,7 @@ const Profile = ({
                                     user={auth.user}
                                     clubs={clubs}
                                     seasons={seasons}
+                                    nationalities={nationalities}
                                 />
                             </div>
                             <div className="my-4"></div>

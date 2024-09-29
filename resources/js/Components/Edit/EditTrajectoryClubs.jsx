@@ -5,20 +5,21 @@ import InputLabel from "../InputLabel";
 import InputError from "../InputError";
 import ClubSelect from "../ClubSelect";
 
-const CreateTrajectoryClubs = ({ player, seasons, clubs, level, onClose }) => {
-    const { data, setData, post, processing, reset, errors } = useForm({
-        player_id: player.id,
-        club_id: "",
-        season_id: "",
-        level: level,
+const EditTrajectoryClubs = ({ statistic, seasons, clubs, onClose }) => {
+    const { data, setData, patch, processing, reset, errors } = useForm({
+        club_id: statistic.club_id,
+        season_id: statistic.season_id,
     });
+
     const submit = (e) => {
-        e.preventDefault();
-        post(route("statistics.store"), {
+        e.preventDefault(e);
+        patch(route("statistics.update", statistic.id), {
             onSuccess: () => {
+                onClose();
                 reset();
-                setData("club_id", "");
-                setData("season_id", "");
+            },
+            onError: (errors) => {
+                console.log("Errores al actualizar:", errors);
             },
         });
     };
@@ -85,7 +86,7 @@ const CreateTrajectoryClubs = ({ player, seasons, clubs, level, onClose }) => {
                             Cerrar
                         </DangerButton>
                         <PrimaryButton className="ms-4" disabled={processing}>
-                            Agregar
+                            Actualizar
                         </PrimaryButton>
                     </div>
                 </form>
@@ -94,4 +95,4 @@ const CreateTrajectoryClubs = ({ player, seasons, clubs, level, onClose }) => {
     );
 };
 
-export default CreateTrajectoryClubs;
+export default EditTrajectoryClubs;
