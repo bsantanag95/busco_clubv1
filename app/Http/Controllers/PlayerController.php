@@ -75,7 +75,22 @@ class PlayerController extends Controller
 
     public function show($id, $slug)
     {
-        $player = Player::with(['positions', 'nationalities', 'trophies', 'transfers.club', 'statistics.club', 'nationals.nationality', 'statistics.season', 'report', 'images', 'videos', 'lastClub.nationality'])
+        $player = Player::with([
+            'images',
+            'lastClub.nationality',
+            'nationalities',
+            'nationals.nationality',
+            'positions',
+            'report',
+            'statistics.club',
+            'statistics.season',
+            'trophies.club',
+            'trophies.season',
+            'trophies.national_team',
+            'trophies.nationality',
+            'transfers.club',
+            'videos',
+        ])
             ->findOrFail($id);
 
         if ($player->slug !== $slug) {

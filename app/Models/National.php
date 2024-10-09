@@ -14,10 +14,10 @@ class National extends Model
     //Relación uno a muchos inversa
     public function nationality()
     {
-        return $this->belongsTo('App\Models\Nationality');
+        return $this->belongsTo(Nationality::class);
     }
     public function player()
     {
-        return $this->belongsTo('App\Models\Player');
+        return $this->belongsTo(Player::class);
     }
 }

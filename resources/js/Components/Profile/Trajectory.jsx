@@ -4,9 +4,10 @@ import { useState } from "react";
 import PlayerStatisticItem from "./PlayerStatisticItem";
 import CreateTrajectoryNationalTeam from "../Create/CreateTrajectoryNationalTeam";
 import PlayerNationalItem from "./PlayerNationalItem";
+import PlayerTrophiesItem from "./PlayerTrophiesItem";
+import CreateTrajectoryTrophies from "../Create/CreateTrajectoryTrophies";
 
 const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [openLevel, setOpenLevel] = useState(null);
 
     const closeModal = () => {
@@ -93,26 +94,34 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                                 />
                             </svg>
                         </span>
-                        <span className="tracking-wide">Palmarés</span>
+                        <span className="tracking-wide flex items-center">
+                            Palmarés
+                            {user && (
+                                <button
+                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                    title="Editar perfil"
+                                    onClick={() => handleEdit("trophies")}
+                                >
+                                    <EditOutlinedIcon
+                                        style={{ fontSize: "1.2rem" }}
+                                    />
+                                </button>
+                            )}
+                            {openLevel === "trophies" && (
+                                <CreateTrajectoryTrophies
+                                    player={player}
+                                    nationalities={nationalities}
+                                    seasons={seasons}
+                                    onClose={closeModal}
+                                />
+                            )}
+                        </span>
                     </div>
-                    {player.trophies.length > 0 ? (
-                        player.trophies.map((trophy, index) => (
-                            <ul key={index} className="list-inside space-y-2">
-                                <li>
-                                    <div className="text-teal-600">
-                                        {trophy.name}
-                                    </div>
-                                    <div className="text-gray-500 text-xs">
-                                        {trophy.country} - {trophy.season}
-                                    </div>
-                                </li>
-                            </ul>
-                        ))
-                    ) : (
-                        <div className="text-teal-600 px-2 py-1">
-                            No ha ganado trofeos
-                        </div>
-                    )}
+                    <PlayerTrophiesItem
+                        player={player}
+                        nationalities={nationalities}
+                        seasons={seasons}
+                    />
                 </div>
                 <div>
                     <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3 mt-6">
@@ -209,7 +218,6 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                             {openLevel === "nationals" && (
                                 <CreateTrajectoryNationalTeam
                                     player={player}
-                                    nationalities={nationalities}
                                     onClose={closeModal}
                                 />
                             )}

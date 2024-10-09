@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
+use App\Models\Season;
+use App\Models\Statistic;
 use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,6 +37,13 @@ class TransferController extends Controller
             Transfer::create([
                 'player_id' => $request->player_id,
                 'club_id' => $request->club_id
+            ]);
+
+            Statistic::create([
+                'player_id' => $request->player_id,
+                'club_id' => $request->club_id,
+                'level' => 'senior',
+                'season_id' => Season::latest()->first()->id
             ]);
 
             $player = Player::find($request->player_id);

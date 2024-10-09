@@ -7,6 +7,7 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransferController;
+use App\Http\Controllers\TrophyController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -38,6 +39,10 @@ Route::delete('/statistics/{statistic}', [StatisticController::class, 'destroy']
 Route::patch('/statistics/{statistic}', [StatisticController::class, 'update'])->middleware(['auth', 'verified'])->name('statistics.update');
 Route::post('/transfers', [TransferController::class, 'store'])->middleware(['auth', 'verified'])->name('transfers.store');
 Route::delete('/transfers/{transfer}', [TransferController::class, 'destroy'])->middleware(['auth', 'verified'])->name('transfers.destroy');
+Route::post('/trophies', [TrophyController::class, 'store'])->middleware(['auth', 'verified'])->name('trophies.store');
+Route::delete('/trophies/{trophy}', [TrophyController::class, 'destroy'])->middleware(['auth', 'verified'])->name('trophies.destroy');
+Route::patch('/trophies/{trophy}', [TrophyController::class, 'update'])->middleware(['auth', 'verified'])->name('trophies.update');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

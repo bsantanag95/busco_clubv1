@@ -87,6 +87,6 @@ class NationalController extends Controller
     public function destroy(National $national)
     {
         $national->delete();
-        return redirect()->back()->with('success', 'Estadistica creada exitosamente');
+        return redirect()->back()->with('success', 'Selección nacional eliminada exitosamente');
     }
 }

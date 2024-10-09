@@ -49,11 +49,14 @@ const CreateTrajectoryClubs = ({ player, seasons, clubs, level, onClose }) => {
                                 }
                             >
                                 <option value="">Seleccionar temporada</option>
-                                {seasons.map((season, index) => (
-                                    <option key={index} value={season.id}>
-                                        {removeSeasonPrefix(season.season)}
-                                    </option>
-                                ))}
+                                {seasons
+                                    .slice()
+                                    .reverse()
+                                    .map((season, index) => (
+                                        <option key={index} value={season.id}>
+                                            {removeSeasonPrefix(season.season)}
+                                        </option>
+                                    ))}
                             </select>
                             <InputError
                                 message={errors.season_id}

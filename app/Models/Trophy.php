@@ -11,9 +11,26 @@ class Trophy extends Model
 
     protected $guarded = ['id'];
 
-    //Relación uno a muchos inverso
     public function player()
     {
-        return $this->belongsTo('App\Models\Player');
+        return $this->belongsTo(Player::class);
+    }
+
+    public function nationality()
+    {
+        return $this->belongsTo(Nationality::class);
+    }
+    public function season()
+    {
+        return $this->belongsTo(Season::class);
+    }
+
+    public function national_team()
+    {
+        return $this->belongsTo(Nationality::class);
+    }
+    public function club()
+    {
+        return $this->belongsTo(Club::class);
     }
 }

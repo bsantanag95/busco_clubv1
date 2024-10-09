@@ -5,13 +5,7 @@ import InputLabel from "../InputLabel";
 import InputError from "../InputError";
 import TextInput from "../TextInput";
 
-const EditTrajectoryNationals = ({
-    player,
-    national,
-    nationalities,
-    onClose,
-}) => {
-    console.log(national);
+const EditTrajectoryNationals = ({ player, national, onClose }) => {
     const { data, setData, patch, processing, reset, errors } = useForm({
         player_id: national.id,
         category: national.category,
