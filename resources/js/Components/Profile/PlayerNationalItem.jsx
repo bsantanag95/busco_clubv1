@@ -6,7 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import handleDelete from "@/Utils/handleDelete";
 
-const PlayerNationalItem = ({ player, nationalities }) => {
+const PlayerNationalItem = ({ player, user, nationalities }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedNational, setSelectedNational] = useState(null);
 
@@ -87,22 +87,26 @@ const PlayerNationalItem = ({ player, nationalities }) => {
                                                 <div>Bandera no disponible</div>
                                             )}
                                         </div>
-                                        <div className="flex space-x-2">
-                                            <button
-                                                onClick={() => handleEdit(p)}
-                                                className="text-blue-500 hover:text-blue-700"
-                                            >
-                                                <EditIcon />
-                                            </button>
-                                            <button
-                                                onClick={() =>
-                                                    deleteNational(p.id)
-                                                }
-                                                className="text-red-500 hover:text-red-700"
-                                            >
-                                                <DeleteIcon />
-                                            </button>
-                                        </div>
+                                        {user && (
+                                            <div className="flex space-x-2">
+                                                <button
+                                                    onClick={() =>
+                                                        handleEdit(p)
+                                                    }
+                                                    className="text-blue-500 hover:text-blue-700"
+                                                >
+                                                    <EditIcon />
+                                                </button>
+                                                <button
+                                                    onClick={() =>
+                                                        deleteNational(p.id)
+                                                    }
+                                                    className="text-red-500 hover:text-red-700"
+                                                >
+                                                    <DeleteIcon />
+                                                </button>
+                                            </div>
+                                        )}
                                     </div>
                                     {openDescriptions[p.id] &&
                                         p.description && (

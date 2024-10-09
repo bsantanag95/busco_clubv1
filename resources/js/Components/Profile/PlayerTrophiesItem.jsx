@@ -6,7 +6,7 @@ import handleDelete from "@/Utils/handleDelete";
 import EditTrajectoryTrophies from "../Edit/EditTrajectoryTrophies";
 import { useState } from "react";
 
-const PlayerTrophiesItem = ({ player, nationalities, seasons }) => {
+const PlayerTrophiesItem = ({ player, user, nationalities, seasons }) => {
     const [selectedTrophy, setSelectedTrophy] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [openDescriptions, setOpenDescriptions] = useState({});
@@ -89,18 +89,26 @@ const PlayerTrophiesItem = ({ player, nationalities, seasons }) => {
                                             }
                                         />
                                     )}
-                                    <button
-                                        onClick={() => handleEdit(trophy)}
-                                        className="text-blue-500 hover:text-blue-700"
-                                    >
-                                        <EditIcon />
-                                    </button>
-                                    <button
-                                        onClick={() => deleteTrophy(trophy.id)}
-                                        className="text-red-500 hover:text-red-700"
-                                    >
-                                        <DeleteIcon />
-                                    </button>
+                                    {user && (
+                                        <>
+                                            <button
+                                                onClick={() =>
+                                                    handleEdit(trophy)
+                                                }
+                                                className="text-blue-500 hover:text-blue-700"
+                                            >
+                                                <EditIcon />
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    deleteTrophy(trophy.id)
+                                                }
+                                                className="text-red-500 hover:text-red-700"
+                                            >
+                                                <DeleteIcon />
+                                            </button>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                             {openDescriptions[trophy.id] && (

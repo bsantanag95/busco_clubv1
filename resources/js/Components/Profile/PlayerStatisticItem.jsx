@@ -4,7 +4,7 @@ import { useState } from "react";
 import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
 import handleDelete from "@/Utils/handleDelete";
 
-const PlayerStatisticItem = ({ player, seasons, clubs, level }) => {
+const PlayerStatisticItem = ({ player, user, seasons, clubs, level }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedStatistic, setSelectedStatistic] = useState(null);
 
@@ -72,22 +72,24 @@ const PlayerStatisticItem = ({ player, seasons, clubs, level }) => {
                                             </div>
                                         )}
                                     </div>
-                                    <div className="flex space-x-2">
-                                        <button
-                                            onClick={() => handleEdit(p)}
-                                            className="text-blue-500 hover:text-blue-700"
-                                        >
-                                            <EditIcon />
-                                        </button>
-                                        <button
-                                            onClick={() =>
-                                                deleteTrajectory(p.id)
-                                            }
-                                            className="text-red-500 hover:text-red-700"
-                                        >
-                                            <DeleteIcon />
-                                        </button>
-                                    </div>
+                                    {user && (
+                                        <div className="flex space-x-2">
+                                            <button
+                                                onClick={() => handleEdit(p)}
+                                                className="text-blue-500 hover:text-blue-700"
+                                            >
+                                                <EditIcon />
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    deleteTrajectory(p.id)
+                                                }
+                                                className="text-red-500 hover:text-red-700"
+                                            >
+                                                <DeleteIcon />
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             </li>
                         </ul>

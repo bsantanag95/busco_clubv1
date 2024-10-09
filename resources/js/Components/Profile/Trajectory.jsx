@@ -65,6 +65,7 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                     </div>
                     <PlayerStatisticItem
                         player={player}
+                        user={user}
                         seasons={seasons}
                         clubs={clubs}
                         level="senior"
@@ -119,6 +120,7 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                     </div>
                     <PlayerTrophiesItem
                         player={player}
+                        user={user}
                         nationalities={nationalities}
                         seasons={seasons}
                     />
@@ -173,6 +175,7 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                     </div>
                     <PlayerStatisticItem
                         player={player}
+                        user={user}
                         seasons={seasons}
                         clubs={clubs}
                         level="youth"
@@ -225,6 +228,7 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                     </div>
                     <PlayerNationalItem
                         player={player}
+                        user={user}
                         nationalities={nationalities}
                     />
                 </div>
