@@ -1,9 +1,8 @@
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Swal from "sweetalert2";
-import { router } from "@inertiajs/react";
 import { useState } from "react";
 import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
+import handleDelete from "@/Utils/handleDelete";
 
 const PlayerStatisticItem = ({ player, seasons, clubs, level }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,28 +17,15 @@ const PlayerStatisticItem = ({ player, seasons, clubs, level }) => {
         return season.replace("Temporada ", "");
     };
 
-    const handleDelete = (statisticId) => {
-        Swal.fire({
-            title: "¿Estás seguro?",
-            text: "No hay vuelta atrás",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Sí, eliminar registro",
-            cancelButtonText: "Cancelar",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                router.delete(route("statistics.destroy", statisticId));
-
-                Swal.fire({
-                    title: "¡Eliminado!",
-                    text: "El registro ha sido eliminado",
-                    icon: "success",
-                });
-            }
-        });
+    const deleteTrajectory = (statisticsId) => {
+        handleDelete(
+            statisticsId,
+            "statistics.destroy",
+            "Esta estadística será eliminada",
+            "La estadística ha sido eliminado con éxito"
+        );
     };
+
     const handleEdit = (player) => {
         setSelectedStatistic(player);
         setIsModalOpen(true);
@@ -94,7 +80,9 @@ const PlayerStatisticItem = ({ player, seasons, clubs, level }) => {
                                             <EditIcon />
                                         </button>
                                         <button
-                                            onClick={() => handleDelete(p.id)}
+                                            onClick={() =>
+                                                deleteTrajectory(p.id)
+                                            }
                                             className="text-red-500 hover:text-red-700"
                                         >
                                             <DeleteIcon />

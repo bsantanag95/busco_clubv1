@@ -3,9 +3,8 @@ import Table from "@/Components/Table";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { clubsConfig } from "@/Config/clubsConfig";
 import EditClub from "@/Components/Edit/EditClub";
-import Swal from "sweetalert2";
-import { router } from "@inertiajs/react";
 import { useState } from "react";
+import handleDelete from "@/Utils/handleDelete";
 
 const ManageClubs = ({ auth, clubs, nationalities }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,34 +20,20 @@ const ManageClubs = ({ auth, clubs, nationalities }) => {
         setIsModalOpen(true);
     };
 
-    const handleDelete = (clubId) => {
-        Swal.fire({
-            title: "¿Estás seguro?",
-            text: "No hay vuelta atrás",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Sí, eliminar club",
-            cancelButtonText: "Cancelar",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                router.delete(route("clubs.destroy", clubId));
-
-                Swal.fire({
-                    title: "¡Eliminado!",
-                    text: "El club ha sido eliminado",
-                    icon: "success",
-                });
-            }
-        });
+    const deleteClub = (clubId, clubName) => {
+        handleDelete(
+            clubId,
+            "clubs.destroy",
+            `¿Eliminar ${clubName}?`,
+            `${clubName} ha sido eliminado con éxito`
+        );
     };
 
     const handleNewClub = () => {
         window.location.href = "/new-club";
     };
 
-    const columns = clubsConfig(handleEdit, handleDelete);
+    const columns = clubsConfig(handleEdit, deleteClub);
 
     return (
         <Authenticated user={auth.user}>

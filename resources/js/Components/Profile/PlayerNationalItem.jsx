@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { router } from "@inertiajs/react";
 import EditTrajectoryNationals from "../Edit/EditTrajectoryNationals";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Swal from "sweetalert2";
+import handleDelete from "@/Utils/handleDelete";
 
 const PlayerNationalItem = ({ player, nationalities }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,28 +15,15 @@ const PlayerNationalItem = ({ player, nationalities }) => {
         setSelectedNational(null);
     };
 
-    const handleDelete = (nationalId) => {
-        Swal.fire({
-            title: "¿Estás seguro?",
-            text: "No hay vuelta atrás",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Sí, eliminar registro",
-            cancelButtonText: "Cancelar",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                router.delete(route("nationals.destroy", nationalId));
-
-                Swal.fire({
-                    title: "¡Eliminado!",
-                    text: "El registro ha sido eliminado",
-                    icon: "success",
-                });
-            }
-        });
+    const deleteNational = (nationalId) => {
+        handleDelete(
+            nationalId,
+            "nationals.destroy",
+            "Esta estadística será eliminada",
+            "La estadística ha sido eliminado con éxito"
+        );
     };
+
     const handleEdit = (national) => {
         setSelectedNational(national);
         setIsModalOpen(true);
@@ -110,7 +96,7 @@ const PlayerNationalItem = ({ player, nationalities }) => {
                                             </button>
                                             <button
                                                 onClick={() =>
-                                                    handleDelete(p.id)
+                                                    deleteNational(p.id)
                                                 }
                                                 className="text-red-500 hover:text-red-700"
                                             >

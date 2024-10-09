@@ -6,7 +6,7 @@ const handleLinkClick = (id, slug) => {
     window.open(`/jugador/${id}/${slug}`, "_blank");
 };
 
-export const playerColumn = (user, handleEdit, handleDelete) =>
+export const playerColumn = (user, handleEdit, deletePlayer) =>
     [
         {
             header: "Jugador/a",
@@ -162,6 +162,7 @@ export const playerColumn = (user, handleEdit, handleDelete) =>
             id: "actions",
             cell: ({ row }) => {
                 const playerId = row.original.id;
+                const playerName = row.original.name;
                 const player = row.original;
                 return (
                     <div className="flex space-x-2">
@@ -172,7 +173,7 @@ export const playerColumn = (user, handleEdit, handleDelete) =>
                             <EditIcon />
                         </button>
                         <button
-                            onClick={() => handleDelete(playerId)}
+                            onClick={() => deletePlayer(playerId, playerName)}
                             className="text-red-500 hover:text-red-700"
                         >
                             <DeleteIcon />

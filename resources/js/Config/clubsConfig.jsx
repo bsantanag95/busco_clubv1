@@ -1,7 +1,7 @@
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export const clubsConfig = (handleEdit, handleDelete) => [
+export const clubsConfig = (handleEdit, deleteClub) => [
     {
         header: "Logo",
         accessorKey: "logo",
@@ -47,6 +47,7 @@ export const clubsConfig = (handleEdit, handleDelete) => [
         accessorKey: "actions",
         cell: ({ row }) => {
             const clubId = row.original.id;
+            const clubName = row.original.name;
             const club = row.original;
             return (
                 <div className="flex space-x-2">
@@ -57,7 +58,7 @@ export const clubsConfig = (handleEdit, handleDelete) => [
                         <EditIcon />
                     </button>
                     <button
-                        onClick={() => handleDelete(clubId)}
+                        onClick={() => deleteClub(clubId, clubName)}
                         className="text-red-500 hover:text-red-700"
                     >
                         <DeleteIcon />
