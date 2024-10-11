@@ -20,6 +20,10 @@ class Player extends Model
     protected $appends = ["age"];
 
     //Relación uno a muchos
+    public function distinctions()
+    {
+        return $this->hasMany(Distinction::class);
+    }
     public function nationals()
     {
         return $this->hasMany(National::class);

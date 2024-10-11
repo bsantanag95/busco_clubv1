@@ -76,6 +76,7 @@ class PlayerController extends Controller
     public function show($id, $slug)
     {
         $player = Player::with([
+            'distinctions',
             'images',
             'lastClub.nationality',
             'nationalities',

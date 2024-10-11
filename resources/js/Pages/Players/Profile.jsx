@@ -3,6 +3,7 @@ import Main from "@/Layouts/MainLayout";
 import About from "@/Components/Profile/About";
 import RandomProfile from "@/Components/Profile/RandomProfile";
 import Trajectory from "@/Components/Profile/Trajectory";
+import Palmares from "@/Components/Profile/Palmares";
 import Report from "@/Components/Profile/Report";
 import Gallery from "@/Components/Profile/Gallery";
 import VideoGallery from "@/Components/Profile/VideoGallery";
@@ -88,6 +89,16 @@ const Profile = ({
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
                                 <Trajectory
+                                    player={player}
+                                    user={auth.user}
+                                    clubs={clubs}
+                                    seasons={seasons}
+                                    nationalities={nationalities}
+                                />
+                            </div>
+                            <div className="my-4"></div>
+                            <div className="bg-white p-4 rounded-lg shadow">
+                                <Palmares
                                     player={player}
                                     user={auth.user}
                                     clubs={clubs}

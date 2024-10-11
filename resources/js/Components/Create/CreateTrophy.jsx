@@ -6,12 +6,7 @@ import DangerButton from "../DangerButton";
 import { useState } from "react";
 import InputError from "../InputError";
 
-const CreateTrajectoryTrophies = ({
-    player,
-    nationalities,
-    seasons,
-    onClose,
-}) => {
+const CreateTrophy = ({ player, nationalities, seasons, onClose }) => {
     const [level, setLevel] = useState("");
     const { data, setData, post, processing, reset, errors } = useForm({
         player_id: player.id,
@@ -457,4 +452,4 @@ const CreateTrajectoryTrophies = ({
     );
 };
 
-export default CreateTrajectoryTrophies;
+export default CreateTrophy;

@@ -3,16 +3,10 @@ import TextInput from "../TextInput";
 import InputLabel from "../InputLabel";
 import PrimaryButton from "../PrimaryButton";
 import DangerButton from "../DangerButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import InputError from "../InputError";
 
-const EditTrajectoryTrophies = ({
-    player,
-    trophy,
-    nationalities,
-    seasons,
-    onClose,
-}) => {
+const EditTrophy = ({ player, trophy, nationalities, seasons, onClose }) => {
     const [level, setLevel] = useState(trophy.level);
     const { data, setData, patch, processing, reset, errors } = useForm({
         player_id: trophy.player_id,
@@ -456,4 +450,4 @@ const EditTrajectoryTrophies = ({
     );
 };
 
-export default EditTrajectoryTrophies;
+export default EditTrophy;

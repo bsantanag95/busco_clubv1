@@ -3,10 +3,10 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import handleDelete from "@/Utils/handleDelete";
-import EditTrajectoryTrophies from "../Edit/EditTrajectoryTrophies";
+import EditTrophy from "../Edit/EditTrophy";
 import { useState } from "react";
 
-const PlayerTrophiesItem = ({ player, user, nationalities, seasons }) => {
+const Trophies = ({ player, user, nationalities, seasons }) => {
     const [selectedTrophy, setSelectedTrophy] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [openDescriptions, setOpenDescriptions] = useState({});
@@ -162,7 +162,7 @@ const PlayerTrophiesItem = ({ player, user, nationalities, seasons }) => {
                 </div>
             )}
             {isModalOpen && selectedTrophy && (
-                <EditTrajectoryTrophies
+                <EditTrophy
                     player={player}
                     trophy={selectedTrophy}
                     nationalities={nationalities}
@@ -174,4 +174,4 @@ const PlayerTrophiesItem = ({ player, user, nationalities, seasons }) => {
     );
 };
 
-export default PlayerTrophiesItem;
+export default Trophies;

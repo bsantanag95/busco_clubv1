@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\DistinctionController;
 use App\Http\Controllers\NationalController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
@@ -24,6 +25,9 @@ Route::post('/clubs', [ClubController::class, 'store'])->name('clubs.store');
 Route::post('/clubs/{club}', [ClubController::class, 'update'])->middleware(['auth', 'verified'])->name('clubs.update');
 Route::delete('/clubs/{club}', [ClubController::class, 'destroy'])->name('clubs.destroy');
 Route::get('/clubs/{club}/edit', [ClubController::class, 'edit'])->name('clubs.edit');
+Route::post('/distinctions', [DistinctionController::class, 'store'])->middleware(['auth', 'verified'])->name('distinctions.store');
+Route::delete('/distinctions/{distinction}', [DistinctionController::class, 'destroy'])->middleware(['auth', 'verified'])->name('distinctions.destroy');
+Route::patch('/distinctions/{distinction}', [DistinctionController::class, 'update'])->middleware(['auth', 'verified'])->name('distinctions.update');
 Route::get('/fichajes', [TransferController::class, 'index'])->name('latest');
 Route::get('/jugador/{id}/{slug}', [PlayerController::class, 'show'])->name('player.show');
 Route::get('/new-player', function () {

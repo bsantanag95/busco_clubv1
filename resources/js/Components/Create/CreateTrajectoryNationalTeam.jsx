@@ -94,6 +94,7 @@ const CreateTrajectoryNationalTeam = ({ player, onClose }) => {
                                 <TextInput
                                     id="first_year"
                                     name="first_year"
+                                    type="number"
                                     value={data.first_year}
                                     onChange={(e) =>
                                         setData("first_year", e.target.value)
@@ -106,6 +107,7 @@ const CreateTrajectoryNationalTeam = ({ player, onClose }) => {
                                     id="last_year"
                                     name="last_year"
                                     value={data.last_year}
+                                    type="number"
                                     onChange={(e) =>
                                         setData("last_year", e.target.value)
                                     }
