@@ -28,7 +28,23 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'player_id' => 'required|exists:players,id',
+            'review' => 'required|string',
+            'observation' => 'required|string',
+            'improvement' => 'required|string',
+            'strength' => 'required|string',
+            'weakness' => 'required|string',
+            'skill' => 'required|string',
+            'comment' => 'required|string',
+            'conclusion' => 'required|string',
+            'author' => 'required|string',
+            'stars' => 'required|numeric|between:0,5',
+        ]);
+
+        Report::create($validated);
+
+        return redirect()->back()->with('success', 'Reporte creado exitosamente');
     }
 
     /**
@@ -52,7 +68,22 @@ class ReportController extends Controller
      */
     public function update(Request $request, Report $report)
     {
-        //
+        $validated = $request->validate([
+            'review' => 'required|string',
+            'observation' => 'required|string',
+            'improvement' => 'required|string',
+            'strength' => 'required|string',
+            'weakness' => 'required|string',
+            'skill' => 'required|string',
+            'comment' => 'required|string',
+            'conclusion' => 'required|string',
+            'author' => 'required|string',
+            'stars' => 'required|numeric|min:0|max:5',
+        ]);
+
+        $report->update($validated);
+
+        return redirect()->back()->with('success', 'Reporte actualizado exitosamente');
     }
 
     /**
@@ -60,6 +91,7 @@ class ReportController extends Controller
      */
     public function destroy(Report $report)
     {
-        //
+        $report->delete();
+        return redirect()->back()->with('success', 'Reporte eliminado exitosamente');
     }
 }

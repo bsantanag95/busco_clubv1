@@ -6,6 +6,7 @@ use App\Http\Controllers\NationalController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\TrophyController;
@@ -38,6 +39,9 @@ Route::delete('/nationals/{national}', [NationalController::class, 'destroy'])->
 Route::post('/nationals', [NationalController::class, 'store'])->middleware(['auth', 'verified'])->name('nationals.store');
 Route::patch('/nationals/{national}', [NationalController::class, 'update'])->middleware(['auth', 'verified'])->name('nationals.update');
 Route::post('/players', [PlayerController::class, 'store'])->middleware(['auth', 'verified'])->name('players.store');
+Route::post('/reports', [ReportController::class, 'store'])->middleware(['auth', 'verified'])->name('reports.store');
+Route::put('/reports/{report}', [ReportController::class, 'update'])->middleware(['auth', 'verified'])->name('reports.update');
+Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->middleware(['auth', 'verified'])->name('reports.destroy');
 Route::post('/statistics', [StatisticController::class, 'store'])->middleware(['auth', 'verified'])->name('statistics.store');
 Route::delete('/statistics/{statistic}', [StatisticController::class, 'destroy'])->middleware(['auth', 'verified'])->name('statistics.destroy');
 Route::patch('/statistics/{statistic}', [StatisticController::class, 'update'])->middleware(['auth', 'verified'])->name('statistics.update');

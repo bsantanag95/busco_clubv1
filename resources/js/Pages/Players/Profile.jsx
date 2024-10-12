@@ -108,7 +108,7 @@ const Profile = ({
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
-                                <Report player={player} />
+                                <Report player={player} user={auth.user} />
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">

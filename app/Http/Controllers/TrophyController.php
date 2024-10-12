@@ -53,7 +53,7 @@ class TrophyController extends Controller
             'national_team_id' => $request->national_team_id
         ]);
 
-        return redirect()->back()->with('success', 'Palmarés creado exitosamente');
+        return redirect()->back()->with('success', 'Trofeo creado exitosamente');
     }
 
 
@@ -92,7 +92,7 @@ class TrophyController extends Controller
 
         $trophy->update($validated);
 
-        return redirect()->back()->with('success', 'Selección nacional creada exitosamente');
+        return redirect()->back()->with('success', 'Trofeo creado exitosamente');
     }
 
     /**
