@@ -31,7 +31,7 @@ const CreateReport = ({ player, onClose }) => {
                 reset();
             },
             onError: (errors) => {
-                console.log("Errores al actualizar:", errors);
+                console.log("Error:", errors);
             },
         });
     };

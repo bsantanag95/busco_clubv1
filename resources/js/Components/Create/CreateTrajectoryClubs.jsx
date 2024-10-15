@@ -20,6 +20,9 @@ const CreateTrajectoryClubs = ({ player, seasons, clubs, level, onClose }) => {
                 setData("club_id", "");
                 setData("season_id", "");
             },
+            onError: (errors) => {
+                console.log("Error:", errors);
+            },
         });
     };
 

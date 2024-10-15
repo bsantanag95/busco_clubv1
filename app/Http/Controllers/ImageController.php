@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Player;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -28,7 +30,32 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'player_id' => 'required|exists:players,id',
+        ]);
+
+        $playerId = $request->input('player_id');
+        $player = Player::findOrFail($playerId);
+
+        if ($request->hasFile('images')) {
+            $uploadedImages = $request->file('images');
+
+            foreach ($uploadedImages as $image) {
+                $imageName = $player->slug . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
+
+                $path = $image->storeAs('images', $imageName, 'public');
+
+                Image::create([
+                    'player_id' => $playerId,
+                    'url' => $path,
+                ]);
+            }
+
+            return redirect()->back()->with('success', 'Imagenes subidas exitosamente');
+        }
+
+        return redirect()->back()->with('error', 'No se seleccionaron imágenes para subir.');
     }
 
     /**
@@ -60,6 +87,12 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
-        //
+        if (Storage::disk('public')->exists($image->url)) {
+            Storage::disk('public')->delete($image->url);
+        }
+
+        $image->delete();
+
+        return redirect()->back()->with('success', 'Imagen eliminada exitosamente');
     }
 }

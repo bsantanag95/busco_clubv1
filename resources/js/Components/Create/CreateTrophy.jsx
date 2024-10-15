@@ -52,7 +52,7 @@ const CreateTrophy = ({ player, nationalities, seasons, onClose }) => {
                 reset();
             },
             onError: (errors) => {
-                console.log("Errores al actualizar:", errors);
+                console.log("Error:", errors);
             },
         });
     };

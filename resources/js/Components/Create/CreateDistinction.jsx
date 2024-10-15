@@ -19,6 +19,9 @@ const CreateDistinction = ({ player, onClose }) => {
                 onClose();
                 reset();
             },
+            onError: (errors) => {
+                console.log("Error:", errors);
+            },
         });
     };
     return (

@@ -35,6 +35,9 @@ const CreateClubForm = ({ nationalities }) => {
                 reset();
                 notify();
             },
+            onError: (errors) => {
+                console.log("Error:", errors);
+            },
         });
     };
 

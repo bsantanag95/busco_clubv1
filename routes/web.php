@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\DistinctionController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\NationalController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionController;
@@ -30,6 +31,8 @@ Route::post('/distinctions', [DistinctionController::class, 'store'])->middlewar
 Route::delete('/distinctions/{distinction}', [DistinctionController::class, 'destroy'])->middleware(['auth', 'verified'])->name('distinctions.destroy');
 Route::patch('/distinctions/{distinction}', [DistinctionController::class, 'update'])->middleware(['auth', 'verified'])->name('distinctions.update');
 Route::get('/fichajes', [TransferController::class, 'index'])->name('latest');
+Route::post('/images', [ImageController::class, 'store'])->middleware(['auth', 'verified'])->name('images.store');
+Route::delete('/images/{image}', [ImageController::class, 'destroy'])->name('images.destroy');
 Route::get('/jugador/{id}/{slug}', [PlayerController::class, 'show'])->name('player.show');
 Route::get('/new-player', function () {
     return Inertia::render('Players/CreatePlayer');

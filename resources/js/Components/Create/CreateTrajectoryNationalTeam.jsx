@@ -21,6 +21,9 @@ const CreateTrajectoryNationalTeam = ({ player, onClose }) => {
                 onClose();
                 reset();
             },
+            onError: (errors) => {
+                console.log("Error:", errors);
+            },
         });
     };
 

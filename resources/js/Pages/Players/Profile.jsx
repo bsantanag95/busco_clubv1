@@ -112,11 +112,14 @@ const Profile = ({
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
-                                <Gallery player={player} />
+                                <Gallery player={player} user={auth.user} />
                             </div>
                             <div className="my-4"></div>
                             <div className="bg-white p-4 rounded-lg shadow">
-                                <VideoGallery player={player} />
+                                <VideoGallery
+                                    player={player}
+                                    user={auth.user}
+                                />
                             </div>
                         </div>
                     </div>
