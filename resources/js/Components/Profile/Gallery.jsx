@@ -32,9 +32,6 @@ const Gallery = ({ player: { images = [], name, id }, user }) => {
         formData.append("player_id", id);
 
         router.post(route("images.store"), formData, {
-            onSuccess: () => {
-                reset();
-            },
             onError: (errors) => {
                 console.log("Error:", errors);
             },

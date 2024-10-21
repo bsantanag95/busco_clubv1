@@ -11,6 +11,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\TrophyController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -53,6 +54,8 @@ Route::delete('/transfers/{transfer}', [TransferController::class, 'destroy'])->
 Route::post('/trophies', [TrophyController::class, 'store'])->middleware(['auth', 'verified'])->name('trophies.store');
 Route::delete('/trophies/{trophy}', [TrophyController::class, 'destroy'])->middleware(['auth', 'verified'])->name('trophies.destroy');
 Route::patch('/trophies/{trophy}', [TrophyController::class, 'update'])->middleware(['auth', 'verified'])->name('trophies.update');
+Route::post('/videos', [VideoController::class, 'store'])->middleware(['auth', 'verified'])->name('videos.store');
+Route::delete('/videos/{video}', [VideoController::class, 'destroy'])->middleware(['auth', 'verified'])->name('videos.destroy');
 
 
 Route::get('/dashboard', function () {

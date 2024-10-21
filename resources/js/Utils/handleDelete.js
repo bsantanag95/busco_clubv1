@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import { router } from "@inertiajs/react";
 
-const handleDelete = (id, deleteRoute, confirmButtonText, successText) => {
+const handleDelete = (id, deleteRoute, confirmButtonText, successText, onSuccess) => {
     Swal.fire({
         title: "¿Estás seguro/a?",
         text: "No hay vuelta atrás",
@@ -13,12 +13,18 @@ const handleDelete = (id, deleteRoute, confirmButtonText, successText) => {
         cancelButtonText: "Cancelar",
     }).then((result) => {
         if (result.isConfirmed) {
-            router.delete(route(deleteRoute, id));
+            router.delete(route(deleteRoute, id), {
+                onSuccess: () => {
+                    Swal.fire({
+                        title: "¡Eliminado!",
+                        text: successText || "El registro ha sido eliminado",
+                        icon: "success",
+                    });
 
-            Swal.fire({
-                title: "¡Eliminado!",
-                text: successText || "El registro ha sido eliminado",
-                icon: "success",
+                    if (onSuccess) {
+                        onSuccess();
+                    }
+                },
             });
         }
     });

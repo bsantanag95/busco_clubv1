@@ -8,15 +8,17 @@ const ImageUploader = ({ open, handleClose, onSubmit }) => {
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
 
+        const validImageTypes = ["image/jpeg", "image/png", "image/gif"];
+
         const validFiles = selectedFiles.filter((file) =>
-            file.type.startsWith("image/")
+            validImageTypes.includes(file.type)
         );
 
         if (validFiles.length !== selectedFiles.length) {
             Swal.fire({
                 icon: "error",
                 title: "Archivo no válido",
-                text: "Solo puedes subir archivos de imagen.",
+                text: "Solo puedes subir archivos de imagen png, jpeg y gif.",
             });
         } else {
             setFiles(validFiles);

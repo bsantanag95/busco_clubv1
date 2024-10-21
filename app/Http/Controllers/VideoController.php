@@ -28,7 +28,14 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'url' => 'required|string|max:255',
+            'player_id' => 'required|exists:players,id',
+        ]);
+
+        Video::create($validated);
+
+        return redirect()->back()->with('success', 'Video creado exitosamente');
     }
 
     /**
@@ -60,6 +67,8 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        $video->delete();
+
+        return redirect()->back()->with('success', 'Video eliminado exitosamente');
     }
 }

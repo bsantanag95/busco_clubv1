@@ -1,7 +1,6 @@
 import { useForm } from "@inertiajs/react";
 import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
 import InputError from "@/Components/InputError";
 import DangerButton from "@/Components/DangerButton";
 import ClubSelect from "@/Components/ClubSelect";
