@@ -105,7 +105,53 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Estatura</div>
-                        <div className="px-4 py-2">{player.height} cm</div>
+                        <div className="px-4 py-2">
+                            {player.height
+                                ? `${player.height} cm`
+                                : "Sin datos"}
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-2">
+                        <div className="px-4 py-2 font-semibold">
+                            Representante
+                        </div>
+                        <div className="px-4 py-2">
+                            {player.agent ? player.agent : "Sin representante"}
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2">
+                        <div className="px-4 py-2 font-semibold">
+                            Redes Sociales
+                        </div>
+                        <div className="px-4 py-2 flex space-x-2">
+                            {ig && (
+                                <a
+                                    href={ig}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src="/storage/images/instagram.png"
+                                        alt="Instagram"
+                                        className="w-6 h-6 object-cover shadow-md cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
+                                    />
+                                </a>
+                            )}
+                            {x && (
+                                <a
+                                    href={x}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src="/storage/images/x.png"
+                                        alt="X"
+                                        className="w-7 h-7 object-cover cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
+                                    />
+                                </a>
+                            )}
+                        </div>
                     </div>
                     {player.status === "2" &&
                         player.last_club &&
@@ -159,40 +205,6 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                                 </div>
                             </div>
                         )}
-
-                    <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">
-                            Redes Sociales
-                        </div>
-                        <div className="px-4 py-2 flex space-x-2">
-                            {ig && (
-                                <a
-                                    href={ig}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img
-                                        src="/storage/images/instagram.png"
-                                        alt="Instagram"
-                                        className="w-6 h-6 object-cover shadow-md cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
-                                    />
-                                </a>
-                            )}
-                            {x && (
-                                <a
-                                    href={x}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img
-                                        src="/storage/images/x.png"
-                                        alt="X"
-                                        className="w-7 h-7 object-cover cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
-                                    />
-                                </a>
-                            )}
-                        </div>
-                    </div>
                 </div>
             </div>
             {user && (

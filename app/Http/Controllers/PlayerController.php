@@ -43,13 +43,14 @@ class PlayerController extends Controller
             'foot' => 'required|string|max:25',
             'attribute' => 'nullable|string|max:191',
             'description' => 'nullable|string|max:191',
-            'x' => 'max:191',
-            'instagram' => 'max:191',
+            'x' => 'nullable|max:191',
+            'instagram' => 'nullable|max:191',
             'email' => 'nullable|lowercase|email|max:255|unique:' . Player::class,
             'profile_photo' => 'nullable|file|image|max:2048',
             'positions' => 'required|array|min:1',
             'nationalities' => 'required|array|min:1',
-            'last_club_id' => 'nullable'
+            'last_club_id' => 'nullable',
+            'agent' => 'nullable|string|max:191',
         ]);
 
         if ($request->hasFile('profile_photo')) {
@@ -131,7 +132,8 @@ class PlayerController extends Controller
             'last_club_id' => 'nullable',
             'attribute' => 'nullable|string|max:191',
             'description' => 'nullable|string|max:191',
-            'status' => 'nullable'
+            'status' => 'nullable',
+            'agent' => 'nullable|string|max:191',
         ]);
 
         if ($request->hasFile('profile_photo')) {

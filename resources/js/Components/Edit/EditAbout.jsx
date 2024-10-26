@@ -28,6 +28,7 @@ const EditAbout = ({ player, onClose, nationalities, positions, clubs }) => {
         last_club_id: player.last_club_id,
         instagram: player.instagram,
         x: player.x,
+        agent: player.agent,
     });
 
     const handlePositionChange = (positionId, isChecked) => {
@@ -264,6 +265,17 @@ const EditAbout = ({ player, onClose, nationalities, positions, clubs }) => {
                             message={errors.last_club_id}
                             className="mt-2"
                         />
+                    </div>
+                    <div className="mt-4">
+                        <InputLabel htmlFor="agent" value="Representante" />
+                        <TextInput
+                            id="agent"
+                            name="agent"
+                            value={data.agent}
+                            onChange={(e) => setData("agent", e.target.value)}
+                            className="mt-1 block w-full"
+                        />
+                        <InputError message={errors.agent} className="mt-2" />
                     </div>
                     <div className="mt-4">
                         <SocialMediaInput
