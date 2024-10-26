@@ -6,18 +6,16 @@ const MultipleSelect = ({
     setData,
     setError,
 }) => {
-    // Estado inicial asegurando al menos un select vacío
     const [selectedNationalities, setSelectedNationalities] = useState(
         initialNationalities.length > 0
             ? initialNationalities.map((nat) => ({
                   id: nat.id,
-                  value: nat.id, // Suponiendo que nat.id es el valor necesario
+                  value: nat.id,
               }))
-            : [{ id: Date.now(), value: "" }] // Al menos un select vacío
+            : [{ id: Date.now(), value: "" }]
     );
 
     useEffect(() => {
-        // Solo ejecuta si initialNationalities tiene datos
         if (initialNationalities.length > 0) {
             const initialSelections = initialNationalities.map((nat) => ({
                 id: nat.id,
@@ -29,7 +27,6 @@ const MultipleSelect = ({
                 initialSelections.map((n) => n.value)
             );
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initialNationalities]);
 
     const handleAddNationality = () => {
