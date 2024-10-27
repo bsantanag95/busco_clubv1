@@ -1,9 +1,11 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import es from "dayjs/locale/es";
+import Title from "../Title";
+import Person2Icon from "@mui/icons-material/Person2";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import EditAbout from "@/Components/Edit/EditAbout";
 import { useState } from "react";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 dayjs.locale(es);
 dayjs.extend(relativeTime);
@@ -26,24 +28,20 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
 
     return (
         <div className="relative bg-white p-3 shadow-sm rounded-sm">
-            <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                <span className="text-green-500">
-                    <svg
-                        className="h-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+            <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                <Title
+                    titulo="Perfil"
+                    icon={<Person2Icon className="h-5 w-5" />}
+                />
+                {user && (
+                    <button
+                        className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                        title="Editar perfil"
+                        onClick={handleEdit}
                     >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M12 4v16m8-8H4"
-                        />
-                    </svg>
-                </span>
-                <span className="tracking-wide">Perfil</span>
+                        <EditOutlinedIcon style={{ fontSize: "1.2rem" }} />
+                    </button>
+                )}
             </div>
             <div className="text-gray-700">
                 <div className="grid md:grid-cols-2 text-sm">
@@ -207,15 +205,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                         )}
                 </div>
             </div>
-            {user && (
-                <button
-                    className="absolute bottom-0 right-0 mb-2 mr-4 p-1 bg-gray-800 text-white rounded-full hover:bg-gray-500"
-                    title="Editar perfil"
-                    onClick={handleEdit}
-                >
-                    <EditOutlinedIcon />
-                </button>
-            )}
+
             {isModalOpen && (
                 <EditAbout
                     player={player}

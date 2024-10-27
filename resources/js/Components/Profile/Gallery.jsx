@@ -2,7 +2,8 @@ import { ImageList, ImageListItem, IconButton } from "@mui/material";
 import { useState } from "react";
 import GalleryModal from "./GalleryModal";
 import Title from "../Title";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import PhotoIcon from "@mui/icons-material/Photo";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ImageUploader from "../ImageUploader";
 import { router } from "@inertiajs/react";
@@ -49,15 +50,18 @@ const Gallery = ({ player: { images = [], name, id }, user }) => {
 
     return (
         <div className="bg-white p-3 shadow-sm rounded-sm">
-            <div className="flex items-center">
-                <Title titulo="Galería" />
+            <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                <Title
+                    titulo="Galería"
+                    icon={<PhotoIcon className="h-5 w-5" />}
+                />
                 {user && (
                     <button
                         className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
                         title="Agregar imagen"
                         onClick={() => setUploaderOpen(true)}
                     >
-                        <AddAPhotoIcon style={{ fontSize: "1.5rem" }} />
+                        <EditOutlinedIcon style={{ fontSize: "1.2rem" }} />
                     </button>
                 )}
             </div>

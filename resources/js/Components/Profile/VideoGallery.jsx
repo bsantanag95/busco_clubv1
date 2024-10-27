@@ -1,5 +1,6 @@
 import { useState } from "react";
-import VideoCallIcon from "@mui/icons-material/VideoCall";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import VideocamIcon from "@mui/icons-material/Videocam";
 import VideoUploader from "../VideoUploader";
 import { router } from "@inertiajs/react";
 import Title from "../Title";
@@ -72,15 +73,18 @@ const VideoGallery = ({ player: { videos: initialVideos = [], id }, user }) => {
     if (videos.length === 0) {
         return (
             <div className="bg-white p-3 shadow-sm rounded-sm">
-                <div className="flex items-center">
-                    <Title titulo="Videos" />
+                <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                    <Title
+                        titulo="Videos"
+                        icon={<VideocamIcon className="h-5 w-5" />}
+                    />
                     {user && (
                         <button
                             className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
                             title="Agregar video"
                             onClick={openModal}
                         >
-                            <VideoCallIcon style={{ fontSize: "2rem" }} />
+                            <EditOutlinedIcon style={{ fontSize: "1.2rem" }} />
                         </button>
                     )}
                 </div>
@@ -97,16 +101,19 @@ const VideoGallery = ({ player: { videos: initialVideos = [], id }, user }) => {
     }
 
     return (
-        <div className="bg-white p-3 shadow-sm rounded-sm mt-4">
-            <div className="flex items-center">
-                <Title titulo="Videos" />
+        <div className="bg-white p-2 shadow-sm rounded-sm">
+            <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
+                <Title
+                    titulo="Videos"
+                    icon={<VideocamIcon className="h-5 w-5" />}
+                />
                 {user && videos.length < 8 && (
                     <button
                         className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
                         title="Agregar video"
                         onClick={openModal}
                     >
-                        <VideoCallIcon style={{ fontSize: "2rem" }} />
+                        <EditOutlinedIcon style={{ fontSize: "1.2rem" }} />
                     </button>
                 )}
             </div>

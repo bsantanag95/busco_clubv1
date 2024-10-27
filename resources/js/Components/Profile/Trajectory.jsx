@@ -1,6 +1,10 @@
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
+import PublicIcon from "@mui/icons-material/Public";
+import SchoolIcon from "@mui/icons-material/School";
 import CreateTrajectoryClubs from "../Create/CreateTrajectoryClubs";
 import { useState } from "react";
+import Title from "../Title";
 import PlayerStatisticItem from "./PlayerStatisticItem";
 import CreateTrajectoryNationalTeam from "../Create/CreateTrajectoryNationalTeam";
 import PlayerNationalItem from "./PlayerNationalItem";
@@ -21,45 +25,30 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
             <div className="grid grid-cols-2 gap-6">
                 <div>
                     <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
-                        <span className="text-green-500">
-                            <svg
-                                className="h-5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                        <Title
+                            titulo="Clubes"
+                            icon={<SportsSoccerIcon className="h-5 w-5" />}
+                        />
+                        {user && (
+                            <button
+                                className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                title="Editar perfil"
+                                onClick={() => handleEdit("senior")}
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M9 12h6m2 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                <EditOutlinedIcon
+                                    style={{ fontSize: "1.2rem" }}
                                 />
-                            </svg>
-                        </span>
-                        <span className="tracking-wide flex items-center">
-                            Clubes
-                            {user && (
-                                <button
-                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
-                                    title="Editar perfil"
-                                    onClick={() => handleEdit("senior")}
-                                >
-                                    <EditOutlinedIcon
-                                        style={{ fontSize: "1.2rem" }}
-                                    />
-                                </button>
-                            )}
-                            {openLevel === "senior" && (
-                                <CreateTrajectoryClubs
-                                    player={player}
-                                    seasons={seasons}
-                                    clubs={clubs}
-                                    level="senior"
-                                    onClose={closeModal}
-                                />
-                            )}
-                        </span>
+                            </button>
+                        )}
+                        {openLevel === "senior" && (
+                            <CreateTrajectoryClubs
+                                player={player}
+                                seasons={seasons}
+                                clubs={clubs}
+                                level="senior"
+                                onClose={closeModal}
+                            />
+                        )}
                     </div>
                     <PlayerStatisticItem
                         player={player}
@@ -72,51 +61,30 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                 <div>
                     <div className="mb-6">
                         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
-                            <span className="text-green-500">
-                                <svg
-                                    className="h-5"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                            <Title
+                                titulo="Inferiores"
+                                icon={<SchoolIcon className="h-5 w-5" />}
+                            />
+                            {user && (
+                                <button
+                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                    title="Editar perfil"
+                                    onClick={() => handleEdit("youth")}
                                 >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 14l9-5-9-5-9 5 9 5z"
+                                    <EditOutlinedIcon
+                                        style={{ fontSize: "1.2rem" }}
                                     />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 14l6.16-3.422A12.093 12.093 0 0121 9.514M12 14v8m0-8l-6.16-3.422A12.093 12.093 0 013 9.514M12 14L3 9.514m18 0a12.093 12.093 0 01-6.84 1.68M21 9.514a12.093 12.093 0 00-6.84-1.68m0 0L12 5m6.16 3.422L12 14m0-9L5.84 8.936M12 5L3 9.514"
-                                    />
-                                </svg>
-                            </span>
-                            <span className="tracking-wide flex items-center">
-                                Inferiores
-                                {user && (
-                                    <button
-                                        className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
-                                        title="Editar perfil"
-                                        onClick={() => handleEdit("youth")}
-                                    >
-                                        <EditOutlinedIcon
-                                            style={{ fontSize: "1.2rem" }}
-                                        />
-                                    </button>
-                                )}
-                                {openLevel === "youth" && (
-                                    <CreateTrajectoryClubs
-                                        player={player}
-                                        seasons={seasons}
-                                        clubs={clubs}
-                                        level="youth"
-                                        onClose={closeModal}
-                                    />
-                                )}
-                            </span>
+                                </button>
+                            )}
+                            {openLevel === "youth" && (
+                                <CreateTrajectoryClubs
+                                    player={player}
+                                    seasons={seasons}
+                                    clubs={clubs}
+                                    level="youth"
+                                    onClose={closeModal}
+                                />
+                            )}
                         </div>
                         <PlayerStatisticItem
                             player={player}
@@ -128,48 +96,27 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                     </div>
                     <div>
                         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
-                            <span className="text-green-500">
-                                <svg
-                                    className="h-5"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                            <Title
+                                titulo="Selección Nacional"
+                                icon={<PublicIcon className="h-5 w-5" />}
+                            />
+                            {user && (
+                                <button
+                                    className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
+                                    title="Editar perfil"
+                                    onClick={() => handleEdit("nationals")}
                                 >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 14l9-5-9-5-9 5 9 5z"
+                                    <EditOutlinedIcon
+                                        style={{ fontSize: "1.2rem" }}
                                     />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 14l6.16-3.422A12.093 12.093 0 0121 9.514M12 14v8m0-8l-6.16-3.422A12.093 12.093 0 013 9.514M12 14L3 9.514m18 0a12.093 12.093 0 01-6.84 1.68M21 9.514a12.093 12.093 0 00-6.84-1.68m0 0L12 5m6.16 3.422L12 14m0-9L5.84 8.936M12 5L3 9.514"
-                                    />
-                                </svg>
-                            </span>
-                            <span className="tracking-wide flex items-center">
-                                Selección Nacional
-                                {user && (
-                                    <button
-                                        className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
-                                        title="Editar perfil"
-                                        onClick={() => handleEdit("nationals")}
-                                    >
-                                        <EditOutlinedIcon
-                                            style={{ fontSize: "1.2rem" }}
-                                        />
-                                    </button>
-                                )}
-                                {openLevel === "nationals" && (
-                                    <CreateTrajectoryNationalTeam
-                                        player={player}
-                                        onClose={closeModal}
-                                    />
-                                )}
-                            </span>
+                                </button>
+                            )}
+                            {openLevel === "nationals" && (
+                                <CreateTrajectoryNationalTeam
+                                    player={player}
+                                    onClose={closeModal}
+                                />
+                            )}
                         </div>
                         <PlayerNationalItem
                             player={player}

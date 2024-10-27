@@ -46,17 +46,17 @@ const ProfileCard = ({ player, user }) => {
                     alt="profile"
                 />
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
                 <h1 className="text-gray-900 font-bold text-lg leading-8 my-1">
                     {player.name}
                 </h1>
                 {user && (
                     <button
-                        className="ml-2 p-1 bg-gray-800 text-white rounded-full hover:bg-gray-500"
+                        className="ml-2 w-8 h-8 p-1 hover:bg-gray-200 rounded-full flex justify-center items-center"
                         title="Editar perfil"
                         onClick={handleEdit}
                     >
-                        <EditOutlinedIcon />
+                        <EditOutlinedIcon style={{ fontSize: "1.2rem" }} />
                     </button>
                 )}
             </div>
