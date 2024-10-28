@@ -5,7 +5,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import CreateTrajectoryClubs from "../Create/CreateTrajectoryClubs";
 import { useState } from "react";
 import Title from "../Title";
-import PlayerStatisticItem from "./PlayerStatisticItem";
+import PlayerClubItem from "./PlayerClubItem";
 import CreateTrajectoryNationalTeam from "../Create/CreateTrajectoryNationalTeam";
 import PlayerNationalItem from "./PlayerNationalItem";
 
@@ -50,7 +50,7 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                             />
                         )}
                     </div>
-                    <PlayerStatisticItem
+                    <PlayerClubItem
                         player={player}
                         user={user}
                         seasons={seasons}
@@ -86,7 +86,7 @@ const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
                                 />
                             )}
                         </div>
-                        <PlayerStatisticItem
+                        <PlayerClubItem
                             player={player}
                             user={user}
                             seasons={seasons}

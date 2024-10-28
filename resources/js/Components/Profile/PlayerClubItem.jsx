@@ -1,16 +1,27 @@
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
 import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
 import handleDelete from "@/Utils/handleDelete";
+import StatisticItem from "./StatisticItem";
 
-const PlayerStatisticItem = ({ player, user, seasons, clubs, level }) => {
+const PlayerClubItem = ({ player, user, seasons, clubs, level }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedStatistic, setSelectedStatistic] = useState(null);
+    const [openStatistics, setOpenStatistics] = useState({});
 
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedStatistic(null);
+    };
+
+    const toggleStatistics = (id) => {
+        setOpenStatistics((prev) => ({
+            ...prev,
+            [id]: !prev[id],
+        }));
     };
 
     const removeSeasonPrefix = (season) => {
@@ -72,25 +83,51 @@ const PlayerStatisticItem = ({ player, user, seasons, clubs, level }) => {
                                             </div>
                                         )}
                                     </div>
-                                    {user && (
-                                        <div className="flex space-x-2">
-                                            <button
-                                                onClick={() => handleEdit(p)}
-                                                className="text-blue-500 hover:text-blue-700"
-                                            >
-                                                <EditIcon />
-                                            </button>
-                                            <button
+                                    <div className="flex space-x-2">
+                                        {openStatistics[p.id] ? (
+                                            <ArrowDropUpIcon
+                                                className="cursor-pointer text-teal-600"
                                                 onClick={() =>
-                                                    deleteTrajectory(p.id)
+                                                    toggleStatistics(p.id)
                                                 }
-                                                className="text-red-500 hover:text-red-700"
-                                            >
-                                                <DeleteIcon />
-                                            </button>
-                                        </div>
-                                    )}
+                                            />
+                                        ) : (
+                                            <ArrowDropDownIcon
+                                                className="cursor-pointer text-teal-600"
+                                                onClick={() =>
+                                                    toggleStatistics(p.id)
+                                                }
+                                            />
+                                        )}
+
+                                        {user && (
+                                            <>
+                                                <button
+                                                    onClick={() =>
+                                                        handleEdit(p)
+                                                    }
+                                                    className="text-blue-500 hover:text-blue-700"
+                                                >
+                                                    <EditIcon />
+                                                </button>
+                                                <button
+                                                    onClick={() =>
+                                                        deleteTrajectory(p.id)
+                                                    }
+                                                    className="text-red-500 hover:text-red-700"
+                                                >
+                                                    <DeleteIcon />
+                                                </button>
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
+                                {openStatistics[p.id] && (
+                                    <StatisticItem
+                                        statistic={p}
+                                        positions={player.positions}
+                                    />
+                                )}
                             </li>
                         </ul>
                     ))
@@ -102,6 +139,7 @@ const PlayerStatisticItem = ({ player, user, seasons, clubs, level }) => {
             {isModalOpen && selectedStatistic && (
                 <EditTrajectoryClubs
                     statistic={selectedStatistic}
+                    player={player}
                     seasons={seasons}
                     clubs={clubs}
                     onClose={closeModal}
@@ -111,4 +149,4 @@ const PlayerStatisticItem = ({ player, user, seasons, clubs, level }) => {
     );
 };
 
-export default PlayerStatisticItem;
+export default PlayerClubItem;

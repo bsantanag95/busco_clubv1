@@ -32,12 +32,27 @@ class StatisticController extends Controller
             'player_id' => 'required|exists:players,id',
             'club_id' => 'required|exists:clubs,id',
             'season_id' => 'required|exists:seasons,id',
+            'goals' => 'nullable|integer|min:0',
+            'assists' => 'nullable|integer|min:0',
+            'goals_conceded' => 'nullable|integer|min:0',
+            'yellow_cards' => 'nullable|integer|min:0',
+            'red_cards' => 'nullable|integer|min:0',
+            'games_played' => 'nullable|integer|min:0',
+            'games_started' => 'nullable|integer|min:0',
         ]);
+
         Statistic::create([
             'player_id' => $request->player_id,
             'club_id' => $request->club_id,
             'season_id' => $request->season_id,
-            'level' => $request->level
+            'level' => $request->level,
+            'goals' => $request->goals,
+            'assists' => $request->assists,
+            'goals_conceded' => $request->goals_conceded,
+            'yellow_cards' => $request->yellow_cards,
+            'red_cards' => $request->red_cards,
+            'games_played' => $request->games_played,
+            'games_started' => $request->games_started,
         ]);
 
         return redirect()->back()->with('success', 'Estadistica creada exitosamente');
@@ -67,12 +82,20 @@ class StatisticController extends Controller
         $validated = $request->validate([
             'club_id' => 'required|exists:clubs,id',
             'season_id' => 'required|exists:seasons,id',
+            'goals' => 'nullable|integer|min:0',
+            'assists' => 'nullable|integer|min:0',
+            'goals_conceded' => 'nullable|integer|min:0',
+            'yellow_cards' => 'nullable|integer|min:0',
+            'red_cards' => 'nullable|integer|min:0',
+            'games_played' => 'nullable|integer|min:0',
+            'games_started' => 'nullable|integer|min:0',
         ]);
 
         $statistic->update($validated);
 
         return redirect()->back()->with('success', 'Estadistica actualizada exitosamente');
     }
+
 
     /**
      * Remove the specified resource from storage.

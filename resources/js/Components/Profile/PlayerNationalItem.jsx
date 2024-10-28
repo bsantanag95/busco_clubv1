@@ -63,50 +63,49 @@ const PlayerNationalItem = ({ player, user, nationalities }) => {
                                                         alt={`${p.nationality.country} logo`}
                                                     />
                                                     <span>{p.category}</span>
-                                                    {openDescriptions[p.id] ? (
-                                                        <ArrowDropUpIcon
-                                                            className="cursor-pointer"
-                                                            onClick={() =>
-                                                                toggleDescription(
-                                                                    p.id
-                                                                )
-                                                            }
-                                                        />
-                                                    ) : (
-                                                        <ArrowDropDownIcon
-                                                            className="cursor-pointer"
-                                                            onClick={() =>
-                                                                toggleDescription(
-                                                                    p.id
-                                                                )
-                                                            }
-                                                        />
-                                                    )}
                                                 </div>
                                             ) : (
                                                 <div>Bandera no disponible</div>
                                             )}
                                         </div>
-                                        {user && (
-                                            <div className="flex space-x-2">
-                                                <button
+                                        <div className="flex space-x-2">
+                                            {openDescriptions[p.id] ? (
+                                                <ArrowDropUpIcon
+                                                    className="cursor-pointer"
                                                     onClick={() =>
-                                                        handleEdit(p)
+                                                        toggleDescription(p.id)
                                                     }
-                                                    className="text-blue-500 hover:text-blue-700"
-                                                >
-                                                    <EditIcon />
-                                                </button>
-                                                <button
+                                                />
+                                            ) : (
+                                                <ArrowDropDownIcon
+                                                    className="cursor-pointer"
                                                     onClick={() =>
-                                                        deleteNational(p.id)
+                                                        toggleDescription(p.id)
                                                     }
-                                                    className="text-red-500 hover:text-red-700"
-                                                >
-                                                    <DeleteIcon />
-                                                </button>
-                                            </div>
-                                        )}
+                                                />
+                                            )}
+
+                                            {user && (
+                                                <>
+                                                    <button
+                                                        onClick={() =>
+                                                            handleEdit(p)
+                                                        }
+                                                        className="text-blue-500 hover:text-blue-700"
+                                                    >
+                                                        <EditIcon />
+                                                    </button>
+                                                    <button
+                                                        onClick={() =>
+                                                            deleteNational(p.id)
+                                                        }
+                                                        className="text-red-500 hover:text-red-700"
+                                                    >
+                                                        <DeleteIcon />
+                                                    </button>
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
                                     {openDescriptions[p.id] &&
                                         p.description && (
