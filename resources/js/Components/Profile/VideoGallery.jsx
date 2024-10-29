@@ -123,6 +123,7 @@ const VideoGallery = ({ player: { videos: initialVideos = [], id }, user }) => {
                 currentVideoIndex={currentVideoIndex}
                 handleVideoChange={handleVideoChange}
                 deleteVideo={deleteVideo}
+                user={user}
             />
 
             <VideoUploader
