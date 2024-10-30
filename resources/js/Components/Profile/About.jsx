@@ -27,7 +27,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
     const x = player.x;
 
     return (
-        <div className="relative bg-white p-3 shadow-sm rounded-sm">
+        <div className="relative bg-gray-100 p-3 shadow-sm rounded-sm">
             <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
                 <Title
                     titulo="Perfil"
@@ -47,22 +47,28 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                 <div className="grid md:grid-cols-2 text-sm">
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Nombre</div>
-                        <div className="px-4 py-2">{player.name}</div>
+                        <div className="px-4 py-2 text-teal-600">
+                            {player.name}
+                        </div>
                     </div>
                     <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Edad</div>
-                        <div className="px-4 py-2">
+                        <div className="px-4 py-2 font-semibold ">Edad</div>
+                        <div className="px-4 py-2 text-teal-600">
                             {dayjs(player.date_of_birth).toNow(true)} (
                             {dayjs(player.date_of_birth).format("DD/MM/YYYY")})
                         </div>
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Género</div>
-                        <div className="px-4 py-2">{player.gender}</div>
+                        <div className="px-4 py-2 text-teal-600">
+                            {player.gender}
+                        </div>
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Pie</div>
-                        <div className="px-4 py-2">{player.foot}</div>
+                        <div className="px-4 py-2 text-teal-600">
+                            {player.foot}
+                        </div>
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">
@@ -79,7 +85,9 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                                     />
                                 ))
                             ) : (
-                                <span>No disponible</span>
+                                <span className="text-teal-600">
+                                    No disponible
+                                </span>
                             )}
                         </div>
                     </div>
@@ -87,13 +95,15 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                         <div className="px-4 py-2 font-semibold">
                             Lugar de nacimiento
                         </div>
-                        <div className="px-4 py-2">{player.place_of_birth}</div>
+                        <div className="px-4 py-2 text-teal-600">
+                            {player.place_of_birth}
+                        </div>
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">
                             Posiciones
                         </div>
-                        <div className="px-4 py-2 flex flex-wrap">
+                        <div className="px-4 py-2 text-teal-600 flex flex-wrap">
                             {pos.map((position, index) => (
                                 <div className="px-1 py-1" key={index}>
                                     {position.short_name}
@@ -103,7 +113,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                     </div>
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Estatura</div>
-                        <div className="px-4 py-2">
+                        <div className="px-4 py-2 text-teal-600">
                             {player.height
                                 ? `${player.height} cm`
                                 : "Sin datos"}
@@ -113,7 +123,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                         <div className="px-4 py-2 font-semibold">
                             Representante
                         </div>
-                        <div className="px-4 py-2">
+                        <div className="px-4 py-2 text-teal-600">
                             {player.agent ? player.agent : "Sin representante"}
                         </div>
                     </div>
