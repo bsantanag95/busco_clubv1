@@ -32,30 +32,13 @@ const Profile = ({
 
     return (
         <Layout user={auth.user}>
-            <div className="bg-gray-100 min-h-screen">
-                <style>
-                    {`:root {
-                        --main-color: #4a76a8;
-                    }
-
-                    .bg-main-color {
-                        background-color: var(--main-color);
-                    }
-
-                    .text-main-color {
-                        color: var(--main-color);
-                    }
-
-                    .border-main-color {
-                        border-color: var(--main-color);
-                    }`}
-                </style>
-                <div className="container mx-auto my-5 p-5">
+            <div className="bg-gray-50 dark:bg-gray-900 h-full flex flex-col">
+                <div className="container mx-auto my-5 p-5 flex-grow">
                     {auth.user && (
                         <div className="mb-4">
                             {player.status === "2" && (
                                 <DangerButton
-                                    className="text-white py-2 px-4 rounded"
+                                    className="text-white py-2 px-4 rounded-lg bg-red-600 hover:bg-red-700 transition-all"
                                     onClick={() => setIsModalOpen(true)}
                                 >
                                     Encontró Club
@@ -66,18 +49,18 @@ const Profile = ({
                             )}
                         </div>
                     )}
-                    <div className="md:flex no-wrap md:-mx-2">
+                    <div className="md:flex md:-mx-2 space-y-4 md:space-y-0">
                         <div className="w-full md:w-3/12 md:mx-2">
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <ProfileCard player={player} user={auth.user} />
                             </div>
-                            <div className="my-4"></div>
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="mt-4"></div>
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <RandomProfile randomPlayers={randomPlayers} />
                             </div>
                         </div>
-                        <div className="w-full md:w-9/12 mx-2">
-                            <div className="bg-white p-4 rounded-lg shadow">
+                        <div className="w-full md:w-9/12 md:mx-2 space-y-4">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <About
                                     player={player}
                                     user={auth.user}
@@ -86,8 +69,7 @@ const Profile = ({
                                     clubs={clubs}
                                 />
                             </div>
-                            <div className="my-4"></div>
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <Trajectory
                                     player={player}
                                     user={auth.user}
@@ -96,8 +78,7 @@ const Profile = ({
                                     nationalities={nationalities}
                                 />
                             </div>
-                            <div className="my-4"></div>
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <Palmares
                                     player={player}
                                     user={auth.user}
@@ -106,16 +87,13 @@ const Profile = ({
                                     nationalities={nationalities}
                                 />
                             </div>
-                            <div className="my-4"></div>
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <Report player={player} user={auth.user} />
                             </div>
-                            <div className="my-4"></div>
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
                                 <Gallery player={player} user={auth.user} />
                             </div>
-                            <div className="my-4"></div>
-                            <div className="bg-white p-4 rounded-lg shadow">
+                            <div className="relative overflow-hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 pb-5">
                                 <VideoGallery
                                     player={player}
                                     user={auth.user}
