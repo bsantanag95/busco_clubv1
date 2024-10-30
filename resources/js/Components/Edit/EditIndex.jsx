@@ -169,6 +169,10 @@ const EditIndex = ({ player, positions, nationalities, clubs, onClose }) => {
                                         />
                                     </div>
                                 ))}
+                                <InputError
+                                    message={errors.positions}
+                                    className="mt-2"
+                                />
                             </div>
                         </div>
                         <div className="mt-4">
