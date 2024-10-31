@@ -1,9 +1,11 @@
+import {
+    ClubSelect,
+    DangerButton,
+    InputError,
+    InputLabel,
+    PrimaryButton,
+} from "@/Components";
 import { useForm } from "@inertiajs/react";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import InputError from "@/Components/InputError";
-import DangerButton from "@/Components/DangerButton";
-import ClubSelect from "@/Components/ClubSelect";
 
 const ClubFound = ({ player, onClose, clubs }) => {
     const { data, setData, post, processing, reset, errors } = useForm({

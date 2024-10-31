@@ -1,10 +1,12 @@
+import {
+    DangerButton,
+    InputError,
+    InputLabel,
+    PrimaryButton,
+    TextInput,
+} from "@/Components";
 import { useForm } from "@inertiajs/react";
-import TextInput from "../TextInput";
-import InputLabel from "../InputLabel";
-import PrimaryButton from "../PrimaryButton";
-import DangerButton from "../DangerButton";
 import { useState } from "react";
-import InputError from "../InputError";
 
 const CreateTrophy = ({ player, nationalities, seasons, onClose }) => {
     const [level, setLevel] = useState("");

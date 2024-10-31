@@ -1,5 +1,5 @@
-import GroupsIcon from "@mui/icons-material/Groups";
 import Title from "../Title";
+import GroupsIcon from "@mui/icons-material/Groups";
 
 const RandomProfile = ({ randomPlayers }) => {
     const defaultPhoto = "/storage/players/default.jpg";

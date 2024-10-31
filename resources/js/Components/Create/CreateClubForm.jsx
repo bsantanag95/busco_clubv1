@@ -1,13 +1,13 @@
-import { useForm } from "@inertiajs/react";
-
+import {
+    FileInput,
+    InputError,
+    InputLabel,
+    PrimaryButton,
+    TextInput,
+} from "@/Components";
 import { ToastContainer, Zoom, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import InputLabel from "../InputLabel";
-import PrimaryButton from "../PrimaryButton";
-import TextInput from "../TextInput";
-import FileInput from "../FileInput";
-import InputError from "../InputError";
+import { useForm } from "@inertiajs/react";
 
 const CreateClubForm = ({ nationalities }) => {
     const { data, setData, post, processing, reset, errors } = useForm({

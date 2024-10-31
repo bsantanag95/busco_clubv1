@@ -1,18 +1,19 @@
-import { ProfileCard } from "@/Components/Profile/ProfileCard";
-import Main from "@/Layouts/MainLayout";
-import About from "@/Components/Profile/About";
-import RandomProfile from "@/Components/Profile/RandomProfile";
-import Trajectory from "@/Components/Profile/Trajectory";
-import Palmares from "@/Components/Profile/Palmares";
-import Report from "@/Components/Profile/Report";
-import Gallery from "@/Components/Profile/Gallery";
-import VideoGallery from "@/Components/Profile/VideoGallery";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+import {
+    ProfileCard,
+    About,
+    RandomProfile,
+    Trajectory,
+    Palmares,
+    Report,
+    Gallery,
+    VideoGallery,
+    ClubFound,
+    ChangeStatus,
+} from "@/Components/Profile";
+import { DangerButton } from "@/Components";
+import { Main, Authenticated } from "@/Layouts";
 import { usePage } from "@inertiajs/react";
-import DangerButton from "@/Components/DangerButton";
 import { useState } from "react";
-import ClubFound from "../../Components/Profile/ClubFound";
-import ChangeStatus from "@/Components/Profile/ChangeStatus";
 
 const Profile = ({
     player,

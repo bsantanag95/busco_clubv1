@@ -93,4 +93,4 @@ const ProfileCard = ({ player, user }) => {
     );
 };
 
-export { ProfileCard };
+export default ProfileCard;

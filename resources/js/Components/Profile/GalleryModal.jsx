@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import ReactImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { IconButton, Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import styled from "@emotion/styled";
 
 const GalleryModal = ({ images, open, handleClose, selectedImageIndex }) => {
     const formattedImages = images.map((image) => ({

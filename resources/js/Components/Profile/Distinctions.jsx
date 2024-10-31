@@ -1,10 +1,10 @@
+import EditDistinction from "../Edit/EditDistinction";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import handleDelete from "@/Utils/handleDelete";
-import EditDistinction from "../Edit/EditDistinction";
+import EditIcon from "@mui/icons-material/Edit";
 import { useState } from "react";
+import handleDelete from "@/Utils/handleDelete";
 
 const Distinctions = ({ player, user }) => {
     const [selectedDistinction, setSelectedDistinction] = useState(null);

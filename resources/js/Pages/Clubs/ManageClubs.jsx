@@ -1,8 +1,7 @@
-import Authenticated from "@/Layouts/AuthenticatedLayout";
-import Table from "@/Components/Table";
-import PrimaryButton from "@/Components/PrimaryButton";
-import { clubsConfig } from "@/Config/clubsConfig";
+import { Authenticated } from "@/Layouts";
+import { Table, PrimaryButton } from "@/Components";
 import EditClub from "@/Components/Edit/EditClub";
+import { clubsConfig } from "@/Config/clubsConfig";
 import { useState } from "react";
 import handleDelete from "@/Utils/handleDelete";
 

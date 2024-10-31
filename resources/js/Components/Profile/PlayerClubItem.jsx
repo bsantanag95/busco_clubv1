@@ -1,11 +1,11 @@
+import StatisticItem from "./StatisticItem";
+import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import { useState } from "react";
-import EditTrajectoryClubs from "../Edit/EditTrajectoryClubs";
 import handleDelete from "@/Utils/handleDelete";
-import StatisticItem from "./StatisticItem";
 
 const PlayerClubItem = ({ player, user, seasons, clubs, level }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);

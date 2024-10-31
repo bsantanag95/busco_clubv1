@@ -1,12 +1,11 @@
-import { ImageList, ImageListItem, IconButton } from "@mui/material";
-import { useState } from "react";
 import GalleryModal from "./GalleryModal";
-import Title from "../Title";
-import PhotoIcon from "@mui/icons-material/Photo";
+import { ImageUploader, Title } from "@/Components";
+import { ImageList, ImageListItem, IconButton } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ImageUploader from "../ImageUploader";
+import PhotoIcon from "@mui/icons-material/Photo";
 import { router } from "@inertiajs/react";
+import { useState } from "react";
 import handleDelete from "@/Utils/handleDelete";
 
 const Gallery = ({ player: { images = [], name, id }, user }) => {

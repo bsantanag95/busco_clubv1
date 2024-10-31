@@ -1,5 +1,5 @@
-import CreateClubForm from "@/Components/Create/CreateClubForm";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+import { CreateClubForm } from "@/Components/Create";
+import { Authenticated } from "@/Layouts";
 
 const CreateClub = ({ auth, nationalities }) => {
     return (

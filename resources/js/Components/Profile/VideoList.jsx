@@ -1,5 +1,4 @@
-import PrimaryButton from "../PrimaryButton";
-import DangerButton from "../DangerButton";
+import { DangerButton, PrimaryButton } from "@/Components";
 import generateIframe from "@/Utils/generateIframe";
 
 const VideoList = ({

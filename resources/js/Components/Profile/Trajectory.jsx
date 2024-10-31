@@ -1,13 +1,14 @@
+import {
+    CreateTrajectoryClubs,
+    CreateTrajectoryNationalTeam,
+} from "@/Components/Create";
+import { PlayerClubItem, PlayerNationalItem } from "@/Components/Profile";
+import Title from "../Title";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import PublicIcon from "@mui/icons-material/Public";
 import SchoolIcon from "@mui/icons-material/School";
-import CreateTrajectoryClubs from "../Create/CreateTrajectoryClubs";
 import { useState } from "react";
-import Title from "../Title";
-import PlayerClubItem from "./PlayerClubItem";
-import CreateTrajectoryNationalTeam from "../Create/CreateTrajectoryNationalTeam";
-import PlayerNationalItem from "./PlayerNationalItem";
 
 const Trajectory = ({ player, user, clubs, seasons, nationalities }) => {
     const [openLevel, setOpenLevel] = useState(null);

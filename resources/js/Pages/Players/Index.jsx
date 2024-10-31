@@ -1,11 +1,10 @@
-import Table from "@/Components/Table";
-import Main from "@/Layouts/MainLayout";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+import { Main, Authenticated } from "@/Layouts";
+import { Table } from "@/Components";
+import EditIndex from "../../Components/Edit/EditIndex";
 import { playerColumn } from "@/Config/columsConfig.jsx";
 import { usePage } from "@inertiajs/react";
-import EditIndex from "../../Components/Edit/EditIndex";
-import handleDelete from "@/Utils/handleDelete";
 import { useState } from "react";
+import handleDelete from "@/Utils/handleDelete";
 
 const Index = ({ players, positions, nationalities, clubs }) => {
     const { auth } = usePage().props;

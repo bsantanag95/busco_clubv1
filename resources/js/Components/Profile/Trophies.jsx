@@ -1,10 +1,10 @@
+import EditTrophy from "../Edit/EditTrophy";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import handleDelete from "@/Utils/handleDelete";
-import EditTrophy from "../Edit/EditTrophy";
 import { useState } from "react";
+import handleDelete from "@/Utils/handleDelete";
 
 const Trophies = ({ player, user, nationalities, seasons }) => {
     const [selectedTrophy, setSelectedTrophy] = useState(null);

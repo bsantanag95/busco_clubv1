@@ -1,10 +1,10 @@
+import EditAbout from "@/Components/Edit/EditAbout";
+import Title from "../Title";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import es from "dayjs/locale/es";
-import Title from "../Title";
 import Person2Icon from "@mui/icons-material/Person2";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import EditAbout from "@/Components/Edit/EditAbout";
 import { useState } from "react";
 
 dayjs.locale(es);

@@ -1,9 +1,11 @@
+import {
+    DangerButton,
+    InputError,
+    InputLabel,
+    PrimaryButton,
+    TextInput,
+} from "@/Components";
 import { useForm } from "@inertiajs/react";
-import PrimaryButton from "../PrimaryButton";
-import DangerButton from "../DangerButton";
-import InputLabel from "../InputLabel";
-import InputError from "../InputError";
-import TextInput from "../TextInput";
 
 const CreateTrajectoryNationalTeam = ({ player, onClose }) => {
     const { data, setData, post, processing, reset, errors } = useForm({

@@ -1,10 +1,9 @@
+import { Title, VideoUploader } from "@/Components";
+import { VideoList } from "@/Components/Profile";
+import { router } from "@inertiajs/react";
 import { useState } from "react";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import VideocamIcon from "@mui/icons-material/Videocam";
-import VideoUploader from "../VideoUploader";
-import { router } from "@inertiajs/react";
-import Title from "../Title";
-import VideoList from "./VideoList";
 import handleDelete from "@/Utils/handleDelete";
 
 const VideoGallery = ({ player: { videos: initialVideos = [], id }, user }) => {

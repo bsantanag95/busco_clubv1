@@ -1,9 +1,9 @@
-import { useState } from "react";
 import EditTrajectoryNationals from "../Edit/EditTrajectoryNationals";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import { useState } from "react";
 import handleDelete from "@/Utils/handleDelete";
 
 const PlayerNationalItem = ({ player, user, nationalities }) => {

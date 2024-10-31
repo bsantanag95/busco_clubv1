@@ -1,9 +1,7 @@
-import Main from "@/Layouts/MainLayout";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
-import Table from "@/Components/Table";
+import { Main, Authenticated } from "@/Layouts";
+import { Table } from "@/Components";
 import { latestColumn } from "@/Config/latestConfig";
 import { usePage } from "@inertiajs/react";
-import { useState } from "react";
 import { router } from "@inertiajs/react";
 import Swal from "sweetalert2";
 
@@ -43,7 +41,7 @@ const Latest = ({ transfers }) => {
                 </Authenticated>
             ) : (
                 <Main>
-                    <Table columns={latestColumn} data={transfers}></Table>
+                    <Table columns={columns} data={transfers}></Table>
                 </Main>
             )}
         </>

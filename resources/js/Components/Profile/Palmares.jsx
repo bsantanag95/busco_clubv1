@@ -1,12 +1,10 @@
+import { CreateDistinction, CreateTrophy } from "@/Components/Create";
+import { Distinctions, Trophies } from "@/Components/Profile";
+import { Title } from "@/Components";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import Trophies from "./Trophies";
-import CreateTrophy from "../Create/CreateTrophy";
-import CreateDistinction from "../Create/CreateDistinction";
 import { useState } from "react";
-import Distinctions from "./Distinctions";
-import Title from "../Title";
 
 const Palmares = ({ player, user, nationalities, seasons }) => {
     const [openModal, setOpenModal] = useState(null);

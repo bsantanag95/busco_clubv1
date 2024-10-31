@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
-import InputLabel from "../InputLabel";
+import {
+    DangerButton,
+    InputError,
+    InputLabel,
+    PrimaryButton,
+    TextInput,
+} from "@/Components";
 import { Rating } from "@mui/material";
 import { useForm } from "@inertiajs/react";
-import InputError from "../InputError";
-import TextInput from "../TextInput";
-import DangerButton from "../DangerButton";
-import PrimaryButton from "../PrimaryButton";
 
 const EditReport = ({ player, report, onClose }) => {
     const { data, setData, put, processing, reset, errors } = useForm({

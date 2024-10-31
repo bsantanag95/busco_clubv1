@@ -1,14 +1,16 @@
+import {
+    Checkbox,
+    ClubSelect,
+    FileInput,
+    InputError,
+    InputLabel,
+    MultipleSelect,
+    PrimaryButton,
+    SocialMediaInput,
+    TextInput,
+} from "@/Components";
 import { useState } from "react";
 import { useForm, Head } from "@inertiajs/react";
-import PrimaryButton from "@/Components/PrimaryButton";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import TextInput from "@/Components/TextInput";
-import SocialMediaInput from "@/Components/SocialMediaInput";
-import FileInput from "@/Components/FileInput";
-import Checkbox from "@/Components/Checkbox";
-import MultipleSelect from "@/Components/MultipleSelect";
-import ClubSelect from "@/Components/ClubSelect";
 
 const CreatePlayerForm = ({ positions, nationalities, clubs }) => {
     const [selectedPositions, setSelectedPositions] = useState([]);

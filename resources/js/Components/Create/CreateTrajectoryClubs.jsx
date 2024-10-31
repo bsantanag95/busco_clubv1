@@ -1,10 +1,12 @@
+import {
+    ClubSelect,
+    DangerButton,
+    InputError,
+    InputLabel,
+    PrimaryButton,
+    TextInput,
+} from "@/Components";
 import { useForm } from "@inertiajs/react";
-import PrimaryButton from "../PrimaryButton";
-import DangerButton from "../DangerButton";
-import InputLabel from "../InputLabel";
-import InputError from "../InputError";
-import ClubSelect from "../ClubSelect";
-import TextInput from "../TextInput";
 
 const CreateTrajectoryClubs = ({ player, seasons, clubs, level, onClose }) => {
     const { data, setData, post, processing, reset, errors } = useForm({
