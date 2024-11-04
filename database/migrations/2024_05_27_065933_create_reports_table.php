@@ -22,10 +22,13 @@ return new class extends Migration
             $table->string('comment')->nullable();
             $table->string('conclusion')->nullable();
             $table->string('author')->nullable();
-            $table->string('twitter')->nullable();
+            $table->string('x')->nullable();
             $table->string('instagram')->nullable();
+            $table->double('stars', 2, 1)->default(1)->check('stars >= 1 and stars <= 5');
             $table->unsignedBigInteger('player_id');
             $table->timestamps();
+
+            $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade');
         });
     }
 

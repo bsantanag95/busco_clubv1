@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('nationals', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('category');
             $table->text('description')->nullable();
-            $table->string('year')->nullable();
+            $table->integer('first_year')->nullable();
+            $table->integer('last_year')->nullable();
             $table->unsignedBigInteger('nationality_id')->nullable();
             $table->unsignedBigInteger('player_id');
 

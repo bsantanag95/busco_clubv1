@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('distinctions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('player_id');
             $table->string('name');
-            $table->text('description')->nullable();
             $table->year('year');
-            $table->timestamps();
+            $table->text('description')->nullable();
+            $table->unsignedBigInteger('player_id');
 
             $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

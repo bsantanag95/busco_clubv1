@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->string('iframe');
             $table->unsignedBigInteger('player_id');
 
             $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade');
