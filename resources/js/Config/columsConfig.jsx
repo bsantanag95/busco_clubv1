@@ -64,7 +64,7 @@ export const playerColumn = (user, handleEdit, deletePlayer) =>
                         {nationalities.map((nationality, index) => (
                             <img
                                 key={index}
-                                src={`storage/${nationality.flag}`}
+                                src={nationality.flag}
                                 alt={`Bandera de ${nationality.country}`}
                                 className="w-6 h-5 rounded-full m-1"
                             />
@@ -99,7 +99,7 @@ export const playerColumn = (user, handleEdit, deletePlayer) =>
 
                 if (lastClub) {
                     const flagSrc = lastClub.nationality
-                        ? `storage/${lastClub.nationality.flag}`
+                        ? lastClub.nationality.flag
                         : null;
 
                     return (
