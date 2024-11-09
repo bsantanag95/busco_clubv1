@@ -20,6 +20,7 @@ const Table = ({
 }) => {
     const [sorting, setSorting] = useState([]);
     const [filtering, setFiltering] = useState("");
+    const path = window.location.pathname === "/";
 
     const table = useReactTable({
         columns,
@@ -72,14 +73,16 @@ const Table = ({
                             placeholder="Buscar futbolista"
                         />
                     </div>
-                    <div className="flex-shrink-0">
-                        <FilterPanel
-                            positions={positions}
-                            nationalities={nationalities}
-                            clubs={clubs}
-                            onFilterChange={onFilterChange}
-                        />
-                    </div>
+                    {path && (
+                        <div className="flex-shrink-0">
+                            <FilterPanel
+                                positions={positions}
+                                nationalities={nationalities}
+                                clubs={clubs}
+                                onFilterChange={onFilterChange}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
 

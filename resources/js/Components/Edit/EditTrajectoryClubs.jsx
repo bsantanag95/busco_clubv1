@@ -19,8 +19,8 @@ const EditTrajectoryClubs = ({
         club_id: statistic.club_id,
         season_id: statistic.season_id,
         level: statistic.level,
-        goals: statistic.goals ?? 0,
-        assists: statistic.assists ?? 0,
+        goals: statistic.goals,
+        assists: statistic.assists,
         goals_conceded: statistic.goals_conceded,
         yellow_cards: statistic.yellow_cards,
         red_cards: statistic.red_cards,
@@ -116,6 +116,7 @@ const EditTrajectoryClubs = ({
                             <TextInput
                                 type="number"
                                 id="goals"
+                                min="0"
                                 value={data.goals}
                                 onChange={(e) =>
                                     setData("goals", e.target.value)
@@ -176,6 +177,7 @@ const EditTrajectoryClubs = ({
                             <TextInput
                                 type="number"
                                 id="yellow_cards"
+                                min="0"
                                 value={data.yellow_cards}
                                 onChange={(e) =>
                                     setData("yellow_cards", e.target.value)
@@ -197,6 +199,7 @@ const EditTrajectoryClubs = ({
                             <TextInput
                                 type="number"
                                 id="red_cards"
+                                min="0"
                                 value={data.red_cards}
                                 onChange={(e) =>
                                     setData("red_cards", e.target.value)
@@ -218,6 +221,7 @@ const EditTrajectoryClubs = ({
                             <TextInput
                                 type="number"
                                 id="games_played"
+                                min="0"
                                 value={data.games_played}
                                 onChange={(e) =>
                                     setData("games_played", e.target.value)
@@ -239,6 +243,7 @@ const EditTrajectoryClubs = ({
                             <TextInput
                                 type="number"
                                 id="games_started"
+                                min="0"
                                 value={data.games_started}
                                 onChange={(e) =>
                                     setData("games_started", e.target.value)

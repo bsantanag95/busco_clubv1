@@ -58,7 +58,7 @@ const PlayerNationalItem = ({ player, user, nationalities }) => {
                                             p.nationality.flag ? (
                                                 <div className="flex items-center space-x-2">
                                                     <img
-                                                        src={`/storage/${p.nationality.flag}`}
+                                                        src={`/${p.nationality.flag}`}
                                                         className="w-6 h-5 rounded-full mr-2"
                                                         alt={`${p.nationality.country} logo`}
                                                     />

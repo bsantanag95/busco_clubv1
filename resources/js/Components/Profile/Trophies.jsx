@@ -52,13 +52,13 @@ const Trophies = ({ player, user, nationalities, seasons }) => {
                                     {trophy.level === "Nacional" &&
                                     trophy.nationality ? (
                                         <img
-                                            src={`/storage/${trophy.nationality.flag}`}
+                                            src={`/${trophy.nationality.flag}`}
                                             className="w-6 h-5 rounded-full"
                                             alt={`${trophy.nationality.country} logo`}
                                         />
                                     ) : (
                                         <img
-                                            src={`/storage/logos/${trophy.organizer}.png`}
+                                            src={`/logos/${trophy.organizer}.png`}
                                             className="w-6 h-5"
                                             alt={`${trophy.organizer} logo`}
                                         />

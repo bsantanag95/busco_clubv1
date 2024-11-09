@@ -79,7 +79,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                                 nat.map((nationality, index) => (
                                     <img
                                         key={index}
-                                        src={`/storage/${nationality.flag}`}
+                                        src={`/${nationality.flag}`}
                                         alt={`Bandera de ${nationality.country}`}
                                         className="w-6 h-5 rounded-full m-1"
                                     />
@@ -140,7 +140,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                                     rel="noopener noreferrer"
                                 >
                                     <img
-                                        src="/storage/images/instagram.png"
+                                        src="/logos/instagram.png"
                                         alt="Instagram"
                                         className="w-6 h-6 object-cover shadow-md cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
                                     />
@@ -153,7 +153,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                                     rel="noopener noreferrer"
                                 >
                                     <img
-                                        src="/storage/images/x.png"
+                                        src="/logos/x.png"
                                         alt="X"
                                         className="w-7 h-7 object-cover cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
                                     />

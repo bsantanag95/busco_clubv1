@@ -33,7 +33,7 @@ export const clubsConfig = (handleEdit, deleteClub) => [
             return (
                 <div className="flex items-center space-x-2">
                     <img
-                        src={`storage/${row.original.nationality.flag}`}
+                        src={row.original.nationality.flag}
                         alt={`Bandera de ${row.original.nationality.country}`}
                         className="w-6 h-5 rounded-full m-1"
                     />
