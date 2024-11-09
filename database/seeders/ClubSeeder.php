@@ -59,6 +59,11 @@ class ClubSeeder extends Seeder
             'logo' => 'clubs/olimpia.jpg',
             'nationality_id' => 6
         ]);
+        Club::create([
+            'name' => 'San Diego Surf',
+            'logo' => 'clubs/san_diego_surf.jpg',
+            'nationality_id' => 6
+        ]);
 
         $clubs = Club::all();
 
