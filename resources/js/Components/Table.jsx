@@ -70,7 +70,7 @@ const Table = ({
                             type="text"
                             value={filtering}
                             onChange={(e) => setFiltering(e.target.value)}
-                            placeholder="Buscar futbolista"
+                            placeholder="Buscar"
                         />
                     </div>
                     {path && (
