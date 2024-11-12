@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('review')->nullable();
-            $table->string('observation')->nullable();
-            $table->string('improvement')->nullable();
-            $table->string('strength')->nullable();
-            $table->string('weakness')->nullable();
-            $table->string('skill')->nullable();
-            $table->string('comment')->nullable();
-            $table->string('conclusion')->nullable();
+            $table->text('review')->nullable();
+            $table->text('observation')->nullable();
+            $table->text('improvement')->nullable();
+            $table->text('strength')->nullable();
+            $table->text('weakness')->nullable();
+            $table->text('skill')->nullable();
+            $table->text('comment')->nullable();
+            $table->text('conclusion')->nullable();
             $table->string('author')->nullable();
             $table->string('x')->nullable();
             $table->string('instagram')->nullable();

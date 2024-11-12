@@ -98,7 +98,12 @@ class ClubSeeder extends Seeder
                 'name' => 'Austria Klagenfurt',
                 'logo' => 'clubs/austria_klagenfurt.png',
                 'nationality_id' => 9,
-            ]
+            ],
+            [
+                'name' => 'Hannover 96 II',
+                'logo' => 'clubs/hannover.png',
+                'nationality_id' => 2,
+            ],
         ];
 
         foreach ($clubs as $clubData) {

@@ -102,7 +102,8 @@ class PlayerController extends Controller
         $nationalities = app(NationalityController::class)->getNationalities();
         $positions = Position::all()->toArray();
         $clubs = app(ClubController::class)->getClubs();
-        $randomPlayers = Player::all()->where('status', Player::BUSCANDO)->random(6);
+        $randomPlayers = Player::all()->where('status', Player::BUSCANDO);
+        $randomPlayers = $randomPlayers->random(min(6, $randomPlayers->count()));
         $seasons = Season::all()->toArray();
 
         return Inertia::render('Players/Profile', ['player' => $player, 'randomPlayers' => $randomPlayers, 'nationalities' => $nationalities, 'positions' => $positions, 'clubs' => $clubs, 'seasons' => $seasons]);

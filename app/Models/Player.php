@@ -57,7 +57,7 @@ class Player extends Model
     public function clubs()
     {
         return $this->belongsToMany(Club::class, 'statistics')
-            ->withPivot('goals', 'assists', 'yellow_cards', 'red_cards', 'starting', 'substitute', 'goals_conceded', 'season_id')
+            ->withPivot('level', 'games_played', 'games_started', 'goals', 'assists', 'red_cards', 'yellow_cards', 'goals_conceded', 'season_id')
             ->withTimestamps();
     }
 

@@ -14,17 +14,35 @@ class NationalSeeder extends Seeder
     public function run(): void
     {
         National::create([
-            'name' => 'Chile Sub 20',
-            'description' => 'Participación en microcilos para el Sudamericano Sub 20 del 2017',
-            'year' => '2015-2016',
-            'nationality_id' => 1,
+            'category' => 'Sub 17',
+            'description' => 'Participación en amistosos preparativos',
+            'first_year' => '2017',
+            'last_year' => '2017',
+            'nationality_id' => 41,
             'player_id' => 1
         ]);
         National::create([
-            'name' => 'Chile Sub 17',
-            'description' => 'Participación en microcilos para el Sudamericano Sub 17 del 2015',
-            'year' => '2015-2016',
-            'nationality_id' => 1,
+            'category' => 'Sub 20',
+            'description' => 'Parte del plantel del Campeonato Sub-20 de la CONCACAF y del Mundial Sub 20 del 2019 en Polonia',
+            'first_year' => '2018',
+            'last_year' => '2019',
+            'nationality_id' => 41,
+            'player_id' => 1
+        ]);
+        National::create([
+            'category' => 'Sub 23',
+            'description' => 'Parte del plantel que participó en el Campeonato Sub-23 de la CONCACAF para los J.J.O.O. de Tokio',
+            'first_year' => '2019',
+            'last_year' => '2020',
+            'nationality_id' => 41,
+            'player_id' => 1
+        ]);
+        National::create([
+            'category' => 'Adulto',
+            'description' => 'Disputó amistosos con la selección mayor ante Gales, El Salvador y Panamá, anotando doblete ante estos últimos',
+            'first_year' => '2019',
+            'last_year' => '2020',
+            'nationality_id' => 41,
             'player_id' => 1
         ]);
     }

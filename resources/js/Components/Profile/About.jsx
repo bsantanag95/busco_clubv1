@@ -170,7 +170,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                                 </div>
                                 <div className="px-4 py-2 flex">
                                     <img
-                                        src={`/storage/${player.last_club.nationality.flag}`}
+                                        src={`/${player.last_club.nationality.flag}`}
                                         className="w-6 h-5 rounded-full mr-2"
                                         alt={`Bandera de ${player.last_club.nationality.country}`}
                                     />

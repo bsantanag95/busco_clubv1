@@ -14,20 +14,20 @@ class VideoSeeder extends Seeder
     public function run(): void
     {
         Video::create([
-            'url' => 'https://youtu.be/NR6HEUYZXbE',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/NR6HEUYZXbE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            'url' => 'https://www.youtube.com/watch?v=Kn9bFhQnDew',
+            'player_id' => 1
+        ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=f8Zbg74Cl8Q',
+            'player_id' => 1
+        ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=iBggswcHhg0',
             'player_id' => 1
         ]);
 
         Video::create([
-            'url' => 'https://youtu.be/OUKGsb8CpF8',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/OUKGsb8CpF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            'player_id' => 1
-        ]);
-
-        Video::create([
-            'url' => 'https://youtu.be/gWVatZAmtaA',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/gWVatZAmtaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            'url' => 'https://youtu.be/dkxrNjSFc_I',
             'player_id' => 1
         ]);
     }

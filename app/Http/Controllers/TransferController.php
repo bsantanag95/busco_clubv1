@@ -43,7 +43,7 @@ class TransferController extends Controller
                 'player_id' => $request->player_id,
                 'club_id' => $request->club_id,
                 'level' => 'senior',
-                'season_id' => Season::latest()->first()->id
+                'season_id' => Season::latest('id')->value('id')
             ]);
 
             $player = Player::find($request->player_id);

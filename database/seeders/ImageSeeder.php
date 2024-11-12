@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Image;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class ImageSeeder extends Seeder
 {
@@ -13,21 +14,34 @@ class ImageSeeder extends Seeder
      */
     public function run(): void
     {
-        Image::create([
-            'url' => 'images/cr7.jpg',
-            'player_id' => 1
-        ]);
-        Image::create([
-            'url' => 'images/cr7-juventus.jpg',
-            'player_id' => 1
-        ]);
-        Image::create([
-            'url' => 'images/cr7-mu.jpg',
-            'player_id' => 1
-        ]);
-        Image::create([
-            'url' => 'images/cr7-portugal',
-            'player_id' => 1
-        ]);
+        $images = [
+            [
+                'url' => 'images/sebastian_soto.jpg',
+                'player_id' => 1,
+            ],
+            [
+                'url' => 'images/sebastian_soto2.jpg',
+                'player_id' => 1,
+            ],
+            [
+                'url' => 'images/sebastian_soto3.jpg',
+                'player_id' => 1,
+            ],
+            [
+                'url' => 'images/sebastian_soto4.jpg',
+                'player_id' => 1,
+            ],
+        ];
+
+        foreach ($images as $imageData) {
+            Image::create([
+                'url' => $imageData['url'],
+                'player_id' => $imageData['player_id'],
+            ]);
+
+            $sourcePath = public_path("seeders/" . $imageData['url']);
+
+            Storage::disk('public')->put($imageData['url'], file_get_contents($sourcePath));
+        }
     }
 }

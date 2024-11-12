@@ -4,7 +4,7 @@ const ClubOption = (props) => (
     <components.Option {...props}>
         <div className="flex items-center">
             <img
-                src={`/storage/${props.data.nationality.flag}`}
+                src={`/${props.data.nationality.flag}`}
                 alt={`Flag of ${props.data.nationality.name}`}
                 className="w-6 h-6 rounded-full mr-2 object-cover"
             />
@@ -17,7 +17,7 @@ const ClubSingleValue = (props) => (
     <components.SingleValue {...props}>
         <div className="flex items-center">
             <img
-                src={`/storage/${props.data.nationality.flag}`}
+                src={`/${props.data.nationality.flag}`}
                 alt={`Flag of ${props.data.nationality.name}`}
                 className="w-6 h-6 rounded-full mr-2 object-cover"
             />
