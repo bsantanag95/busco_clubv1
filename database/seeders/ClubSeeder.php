@@ -104,6 +104,16 @@ class ClubSeeder extends Seeder
                 'logo' => 'clubs/hannover.png',
                 'nationality_id' => 2,
             ],
+            [
+                'name' => 'Universidad Católica',
+                'logo' => 'clubs/uc.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Unión La Calera',
+                'logo' => 'clubs/la_calera.png',
+                'nationality_id' => 21,
+            ],
         ];
 
         foreach ($clubs as $clubData) {

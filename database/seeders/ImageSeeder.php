@@ -31,6 +31,18 @@ class ImageSeeder extends Seeder
                 'url' => 'images/sebastian_soto4.jpg',
                 'player_id' => 1,
             ],
+            [
+                'url' => 'images/patricio_flores.jpeg',
+                'player_id' => 2,
+            ],
+            [
+                'url' => 'images/patricio_flores2.jpg',
+                'player_id' => 2,
+            ],
+            [
+                'url' => 'images/patricio_flores4.jpg',
+                'player_id' => 2,
+            ],
         ];
 
         foreach ($images as $imageData) {

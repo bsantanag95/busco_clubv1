@@ -45,5 +45,21 @@ class NationalSeeder extends Seeder
             'nationality_id' => 41,
             'player_id' => 1
         ]);
+        National::create([
+            'category' => 'Sub 17',
+            'description' => 'Parte del plantel que disputó el Sudamericano Sub 15 en Argentina',
+            'first_year' => '2017',
+            'last_year' => '2017',
+            'nationality_id' => 21,
+            'player_id' => 2
+        ]);
+        National::create([
+            'category' => 'Sub 17',
+            'description' => 'Subcampeón del Sudamericano Sub 17 en Perú del 2019 y mundialista sub 17 en Brasil',
+            'first_year' => '2018',
+            'last_year' => '2019',
+            'nationality_id' => 21,
+            'player_id' => 2
+        ]);
     }
 }

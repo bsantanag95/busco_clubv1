@@ -28,5 +28,20 @@ class ReportSeeder extends Seeder
             'stars' => 3,
             'player_id' => 1,
         ]);
+        Report::create([
+            'review' => "Jugador con experiencia en torneos internacionales juveniles, destacando en el Mundial Sub-17 y Sudamericano Sub-17, lo cual le ha permitido adquirir disciplina táctica y una sólida lectura del juego.",
+            'observation' => "Tiene buena capacidad de marcaje y anticipación, tanto en el medio campo como en la defensa central. Su altura de 1.75 m le permite ser ágil y adaptarse a múltiples posiciones defensivas, aunque no es particularmente fuerte en el juego aéreo contra delanteros más altos.",
+            'improvement' => "Necesita mejorar en la recuperación física y trabajar en la resistencia, ya que lleva tiempo sin actividad competitiva. También sería beneficioso mejorar su habilidad en pases largos para transiciones rápidas.",
+            'strength' => "Marcaje agresivo, versatilidad en defensa y buena ubicación en el campo. Capaz de interceptar balones y frenar ataques en su zona.",
+            'weakness' => "Le falta ritmo de juego y precisión en pases largos debido al tiempo sin jugar en un club. Además, su estatura lo puede limitar en jugadas aéreas defensivas.",
+            'skill' => "Control defensivo en situaciones de presión y habilidad para cerrar espacios. También puede actuar como un organizador defensivo, distribuyendo balones en corto.",
+            'comment' => "Jugador que ha demostrado potencial en juveniles, aunque la falta de actividad en los últimos meses afecta su continuidad. Podría ser una opción interesante para reforzar la defensa o el medio campo defensivo si retoma su nivel físico.",
+            'conclusion' => "Si se adapta rápidamente al ritmo de juego profesional, tiene el potencial para establecerse en un rol defensivo clave, especialmente como volante de contención o defensor central.",
+            'author' => "Alejandro López",
+            'x' => "https://x.com/alejandrolopez",
+            'instagram' => "https://instagram.com/alejandrolopez_scout",
+            'stars' => 3,
+            'player_id' => 2,
+        ]);
     }
 }

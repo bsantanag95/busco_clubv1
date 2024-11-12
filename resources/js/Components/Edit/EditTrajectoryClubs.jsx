@@ -19,6 +19,7 @@ const EditTrajectoryClubs = ({
         club_id: statistic.club_id,
         season_id: statistic.season_id,
         level: statistic.level,
+        minutes: statistic.minutes,
         goals: statistic.goals,
         assists: statistic.assists,
         goals_conceded: statistic.goals_conceded,
@@ -238,7 +239,7 @@ const EditTrajectoryClubs = ({
                                 htmlFor="games_started"
                                 className="block text-sm font-medium text-gray-700 dark:text-gray-300"
                             >
-                                Partidos Comenzados
+                                Partidos de Titular
                             </InputLabel>
                             <TextInput
                                 type="number"
@@ -252,6 +253,28 @@ const EditTrajectoryClubs = ({
                             />
                             <InputError
                                 message={errors.games_started}
+                                className="mt-2"
+                            />
+                        </div>
+                        <div>
+                            <InputLabel
+                                htmlFor="games_played"
+                                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                            >
+                                Minutos Jugados
+                            </InputLabel>
+                            <TextInput
+                                type="number"
+                                id="minutes"
+                                min="0"
+                                value={data.minutes}
+                                onChange={(e) =>
+                                    setData("minutes", e.target.value)
+                                }
+                                className="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 text-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            />
+                            <InputError
+                                message={errors.minutes}
                                 className="mt-2"
                             />
                         </div>

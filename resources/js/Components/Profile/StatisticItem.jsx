@@ -8,6 +8,9 @@ const StatisticItem = ({ statistic, positions }) => {
             <thead>
                 <tr>
                     <th className="py-1 px-2 border-b text-center font-semibold text-gray-600">
+                        M
+                    </th>
+                    <th className="py-1 px-2 border-b text-center font-semibold text-gray-600">
                         PJ
                     </th>
                     <th className="py-1 px-2 border-b text-center font-semibold text-gray-600">
@@ -35,6 +38,9 @@ const StatisticItem = ({ statistic, positions }) => {
             </thead>
             <tbody>
                 <tr>
+                    <td className="py-1 px-2 border-b text-gray-700 text-center">
+                        {statistic.minutes ?? "-"}
+                    </td>
                     <td className="py-1 px-2 border-b text-gray-700 text-center">
                         {statistic.games_played ?? "-"}
                     </td>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
             $table->enum('level', ['youth', 'senior']);
+            $table->integer('minutes')->nullable();
             $table->integer('games_played')->nullable();
             $table->integer('games_started')->nullable();
             $table->integer('goals')->nullable();
