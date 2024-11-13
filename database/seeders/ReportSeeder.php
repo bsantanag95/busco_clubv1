@@ -43,5 +43,50 @@ class ReportSeeder extends Seeder
             'stars' => 3,
             'player_id' => 2,
         ]);
+        Report::create([
+            'review' => 'Jugador joven con gran entusiasmo y proyección en el profesionalismo. Su perfil apunta a un delantero rápido que busca aprovechar su velocidad por las bandas. Aunque también es capaz de jugar como centro delantero debido a su buena definición y olfato goleador en el área.',
+            'observation' => 'Si bien no ha pasado por clubes juveniles de alto prestigio ni ha sido parte de la selección juvenil, su movilidad en ataque y su capacidad para adaptarse a diferentes posiciones ofensivas le brindan un potencial interesante. Su reciente experiencia en el fútbol europeo, aunque en divisiones inferiores, le permite tener una visión amplia del juego.',
+            'improvement' => 'Necesita trabajar en el desarrollo físico y táctico para el nivel profesional. Mejorar la toma de decisiones en ataque, así como la resistencia y fortaleza física para enfrentar defensores de mayor categoría. También sería beneficioso para él desarrollar habilidades en su pierna menos hábil para ser un atacante más versátil.',
+            'strength' => 'Buena velocidad, versatilidad ofensiva (capaz de jugar tanto por las bandas como de centro delantero) y capacidad para encontrar espacios en el área. Su experiencia en ligas europeas le da una pequeña ventaja en términos de adaptación a estilos de juego diferentes.',
+            'weakness' => 'Falta de experiencia en clubes de alto nivel y carencia de exposición en el ámbito nacional, lo que podría dificultar su proyección. No ha demostrado aún un rendimiento sobresaliente que lo destaque entre los mejores juveniles.',
+            'skill' => 'Buen dominio del balón en velocidad y capacidad para definir en jugadas rápidas. Su habilidad de adaptarse a diferentes roles ofensivos le permite aportar tanto en el juego directo como en posiciones más centrales.',
+            'comment' => 'Requiere de un entorno de desarrollo adecuado que potencie sus habilidades y le permita superar sus limitaciones. Dado su perfil y experiencia en Italia, podría ser una apuesta a mediano plazo para equipos que busquen desarrollarlo en el rol de extremo.',
+            'conclusion' => 'Aunque actualmente es un jugador en formación, su versatilidad y experiencia en el extranjero podrían ser ventajosos si logra desarrollarse físicamente y adquirir mayor experiencia competitiva. Necesita tiempo para evolucionar y consolidarse en el profesionalismo.',
+            'author' => 'Análisis del Equipo Técnico',
+            'x' => '',
+            'instagram' => '',
+            'stars' => 2.5,
+            'player_id' => 3,
+        ]);
+        Report::create([
+            'review' => 'Jugador joven con gran entusiasmo y proyección en el profesionalismo. Su perfil apunta a un delantero rápido que busca aprovechar su velocidad por las bandas. Aunque también es capaz de jugar como centro delantero debido a su buena definición y olfato goleador en el área.',
+            'observation' => 'Si bien no ha pasado por clubes juveniles de alto prestigio ni ha sido parte de la selección juvenil, su movilidad en ataque y su capacidad para adaptarse a diferentes posiciones ofensivas le brindan un potencial interesante. Su reciente experiencia en el fútbol europeo, aunque en divisiones inferiores, le permite tener una visión amplia del juego.',
+            'improvement' => 'Necesita trabajar en el desarrollo físico y táctico para el nivel profesional. Mejorar la toma de decisiones en ataque, así como la resistencia y fortaleza física para enfrentar defensores de mayor categoría. También sería beneficioso para él desarrollar habilidades en su pierna menos hábil para ser un atacante más versátil.',
+            'strength' => 'Buena velocidad, versatilidad ofensiva (capaz de jugar tanto por las bandas como de centro delantero) y capacidad para encontrar espacios en el área. Su experiencia en ligas europeas le da una pequeña ventaja en términos de adaptación a estilos de juego diferentes.',
+            'weakness' => 'Falta de experiencia en clubes de alto nivel y carencia de exposición en el ámbito nacional, lo que podría dificultar su proyección. No ha demostrado aún un rendimiento sobresaliente que lo destaque entre los mejores juveniles.',
+            'skill' => 'Buen dominio del balón en velocidad y capacidad para definir en jugadas rápidas. Su habilidad de adaptarse a diferentes roles ofensivos le permite aportar tanto en el juego directo como en posiciones más centrales.',
+            'comment' => 'Requiere de un entorno de desarrollo adecuado que potencie sus habilidades y le permita superar sus limitaciones. Dado su perfil y experiencia en Italia, podría ser una apuesta a mediano plazo para equipos que busquen desarrollarlo en el rol de extremo.',
+            'conclusion' => 'Aunque actualmente es un jugador en formación, su versatilidad y experiencia en el extranjero podrían ser ventajosos si logra desarrollarse físicamente y adquirir mayor experiencia competitiva. Necesita tiempo para evolucionar y consolidarse en el profesionalismo.',
+            'author' => 'Análisis del Equipo Técnico',
+            'x' => '',
+            'instagram' => '',
+            'stars' => 3.5,
+            'player_id' => 4,
+        ]);
+        Report::create([
+            'review' => 'Arquero chileno de 27 años con formación en una de las mejores academias de Chile y experiencia en la sub-20 nacional. A pesar de su prometedora juventud, tuvo dificultades para consolidarse en el profesionalismo y solo ha jugado en equipos de tercera división. Sin club desde hace 2 años, su ritmo competitivo podría estar comprometido. Mide 181 cm, una altura promedio para el puesto, aunque compensa con agilidad y buena técnica bajo los tres palos.',
+            'observation' => 'Arquero de buena técnica y posicionamiento, con reflejos rápidos y confiabilidad en el juego bajo los palos. A pesar de sus años sin actividad profesional, su formación sólida y su experiencia en selecciones juveniles nacionales son un respaldo de su calidad potencial. Se muestra seguro en situaciones de uno contra uno y tiene un buen control de manos, aunque puede faltarle ritmo competitivo debido a su inactividad reciente.',
+            'improvement' => 'Necesita recuperar ritmo y confianza en la cancha, además de mejorar su juego aéreo y su salida con los pies. Entrenar su resistencia y condición física será fundamental para estar a nivel profesional después de tanto tiempo sin competencia activa.',
+            'strength' => 'Reflejos rápidos, buena técnica bajo los palos, seguridad en situaciones de corto alcance y capacidad para leer el juego en jugadas peligrosas. Su formación en una de las mejores canteras y su paso por la sub-20 de Chile avalan su potencial y comprensión táctica.',
+            'weakness' => 'Inactividad prolongada y falta de experiencia en primera o segunda división. Su juego aéreo podría mejorar, especialmente en balones cruzados o córners donde su estatura podría ser una desventaja. Le falta también la confianza que otorga la regularidad en el arco.',
+            'skill' => 'Agilidad y técnica en la portería, buen posicionamiento, reflejos rápidos y seguridad en los mano a mano. A pesar de sus carencias en juego aéreo, su capacidad de reacción es un punto a su favor.',
+            'comment' => 'Es un arquero que podría aportar a un equipo que busque una opción económica con potencial, especialmente en divisiones inferiores o como suplente. Si logra recuperar su ritmo competitivo, su experiencia juvenil y su formación pueden ser una base sólida para una buena proyección.',
+            'conclusion' => 'Arquero con bases técnicas y experiencia en selecciones juveniles, aunque su inactividad es un factor importante a considerar. Puede ser una buena incorporación para equipos en proceso de crecimiento o de categorías menores, donde pueda recuperar confianza y tiempo de juego.',
+            'author' => 'Análisis del Equipo Técnico',
+            'x' => '',
+            'instagram' => '',
+            'stars' => 2,
+            'player_id' => 5,
+        ]);
     }
 }

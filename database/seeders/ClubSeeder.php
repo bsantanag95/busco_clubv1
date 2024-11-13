@@ -114,6 +114,56 @@ class ClubSeeder extends Seeder
                 'logo' => 'clubs/la_calera.png',
                 'nationality_id' => 21,
             ],
+            [
+                'name' => 'Deportes Valdivia',
+                'logo' => 'clubs/deportes_valdivia.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'SPAL',
+                'logo' => 'clubs/spal.png',
+                'nationality_id' => 69,
+            ],
+            [
+                'name' => 'Vélez Sarsfield',
+                'logo' => 'clubs/velez.png',
+                'nationality_id' => 6,
+            ],
+            [
+                'name' => 'Rosario Central',
+                'logo' => 'clubs/rosario_central.png',
+                'nationality_id' => 6,
+            ],
+            [
+                'name' => 'Ferro Carril Oeste',
+                'logo' => 'clubs/ferro.png',
+                'nationality_id' => 6,
+            ],
+            [
+                'name' => 'Deportivo Cuenca',
+                'logo' => 'clubs/cuenca.png',
+                'nationality_id' => 33,
+            ],
+            [
+                'name' => 'Deportes Limache',
+                'logo' => 'clubs/limache.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Lautaro de Buin',
+                'logo' => 'clubs/lautaro_de_buin.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Provincial Ovalle',
+                'logo' => 'clubs/ovalle.jpg',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Colchagua',
+                'logo' => 'clubs/colchagua.png',
+                'nationality_id' => 21,
+            ],
         ];
 
         foreach ($clubs as $clubData) {

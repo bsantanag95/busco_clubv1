@@ -1,0 +1,29 @@
+PARA QUE FUNCIONE EL PROYECTO REALIZAR LO SIGUIENTE
+
+INSTALAR DEPENDENCIAS DE LARAVEL Y CONFIGURAR EL ENTORNO
+
+composer install
+cp .env.example .env
+php artisan key:generate
+
+Configura la base de datos en archivo .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_de_tu_base_de_datos
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+
+CREAR BASE DE DATOS CON EL NOMBRE ASIGNADO EN "DB_USERNAME"
+
+EJECUTAR LAS MIGRACIONES Y LOS SEED
+php artisan migrate --seed
+
+INSTALAR DEPENDENCIAS DE NODE.JS
+npm install
+
+INICIAR SERVIDORES
+php artisan serve
+npm run dev
+
+ABRIR "http://127.0.0.1:8000"

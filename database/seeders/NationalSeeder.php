@@ -61,5 +61,29 @@ class NationalSeeder extends Seeder
             'nationality_id' => 21,
             'player_id' => 2
         ]);
+        National::create([
+            'category' => 'Sub 15',
+            'description' => 'Parte de la preselección sub 15 de Argentina',
+            'first_year' => '2015',
+            'last_year' => '2015',
+            'nationality_id' => 6,
+            'player_id' => 4
+        ]);
+        National::create([
+            'category' => 'Sub 20',
+            'description' => 'Citado a microciclos de la selección sub 20 de Argentina',
+            'first_year' => '2018',
+            'last_year' => '2018',
+            'nationality_id' => 6,
+            'player_id' => 4
+        ]);
+        National::create([
+            'category' => 'Sub 20',
+            'description' => 'Citado a microciclos de la selección sub 20 de Chile',
+            'first_year' => '2016',
+            'last_year' => '2016',
+            'nationality_id' => 21,
+            'player_id' => 5
+        ]);
     }
 }
