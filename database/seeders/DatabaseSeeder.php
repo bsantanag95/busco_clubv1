@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ReportSeeder::class);
         $this->call(NationalSeeder::class);
         $this->call(DistinctionSeeder::class);
+        $this->call(TransferSeeder::class);
         $this->call(TrophySeeder::class);
         $this->call(ImageSeeder::class);
         $this->call(VideoSeeder::class);

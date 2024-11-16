@@ -45,5 +45,25 @@ class VideoSeeder extends Seeder
             'url' => 'https://vimeo.com/957983075',
             'player_id' => 4
         ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=ZFNK5Shahvo',
+            'player_id' => 9
+        ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=hlC7-ff11qI',
+            'player_id' => 9
+        ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=zmzFEl7YiPk',
+            'player_id' => 9
+        ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=uawwJ19tRKw',
+            'player_id' => 11
+        ]);
+        Video::create([
+            'url' => 'https://www.youtube.com/watch?v=OVg3afGaY2M',
+            'player_id' => 12
+        ]);
     }
 }

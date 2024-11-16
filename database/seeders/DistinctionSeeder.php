@@ -31,5 +31,29 @@ class DistinctionSeeder extends Seeder
             'description' => 'Jugador destacó como titular en 7 de los 9 partidos de su selección en el sudamericano',
             'player_id' => 2,
         ]);
+        Distinction::create([
+            'name' => 'Subcampeón del Sudamericano Sub 17 en Perú',
+            'year' => 2019,
+            'description' => 'Jugador anotó doblete en victoria por 4-2 frente a Uruguay que dio la clasificación al mundial',
+            'player_id' => 8,
+        ]);
+        Distinction::create([
+            'name' => 'Parte del plantel subcampeón de la Primera División de Chile con Cobresal',
+            'year' => 2023,
+            'description' => 'Si bien no jugó mucho, estuvo presente en triunfos clavos frente a Ñublense y Magallanes',
+            'player_id' => 8,
+        ]);
+        Distinction::create([
+            'name' => 'Tercer puesto del mundial sub 17 en India',
+            'year' => 2017,
+            'description' => 'Solo disputó 16 minutos en la victoria 3-0 vs Honduras',
+            'player_id' => 9,
+        ]);
+        Distinction::create([
+            'name' => 'Jugador revelación de la Serie A de Ecuador',
+            'year' => 2022,
+            'description' => 'Premio otorgado por ser el mejor jugador de la liga ecuatoriana',
+            'player_id' => 10,
+        ]);
     }
 }

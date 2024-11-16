@@ -164,6 +164,131 @@ class ClubSeeder extends Seeder
                 'logo' => 'clubs/colchagua.png',
                 'nationality_id' => 21,
             ],
+            [
+                'name' => 'Villarreal',
+                'logo' => 'clubs/villarreal.png',
+                'nationality_id' => 40,
+            ],
+            [
+                'name' => 'Villarreal B',
+                'logo' => 'clubs/villarreal.png',
+                'nationality_id' => 40,
+            ],
+            [
+                'name' => 'Villarreal C',
+                'logo' => 'clubs/villarreal.png',
+                'nationality_id' => 40,
+            ],
+            [
+                'name' => 'San Fernando CD',
+                'logo' => 'clubs/san_fernando.png',
+                'nationality_id' => 40,
+            ],
+            [
+                'name' => 'Cádiz CF',
+                'logo' => 'clubs/cadiz.png',
+                'nationality_id' => 40,
+            ],
+            [
+                'name' => 'Universidad de Chile',
+                'logo' => 'clubs/u_de_chile.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Deportes Concepción',
+                'logo' => 'clubs/deportes_concepcion.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Cobresal',
+                'logo' => 'clubs/cobresal.png',
+                'nationality_id' => 21,
+            ],
+            [
+                'name' => 'Santos',
+                'logo' => 'clubs/santos.png',
+                'nationality_id' => 15,
+            ],
+            [
+                'name' => 'Orlando City B',
+                'logo' => 'clubs/orlando_city.png',
+                'nationality_id' => 41,
+            ],
+            [
+                'name' => 'Cuiabá',
+                'logo' => 'clubs/cuiaba.png',
+                'nationality_id' => 15,
+            ],
+            [
+                'name' => 'Metalist Kharkiv',
+                'logo' => 'clubs/metalist.jpg',
+                'nationality_id' => 129,
+            ],
+            [
+                'name' => 'Atlético Kin',
+                'logo' => 'clubs/atletico_kin.png',
+                'nationality_id' => 33,
+            ],
+            [
+                'name' => 'LDU Quito',
+                'logo' => 'clubs/ldu_quito.png',
+                'nationality_id' => 33,
+            ],
+            [
+                'name' => 'Celtic',
+                'logo' => 'clubs/celtic.png',
+                'nationality_id' => 37,
+            ],
+            [
+                'name' => 'Celtic B',
+                'logo' => 'clubs/celtic.png',
+                'nationality_id' => 37,
+            ],
+            [
+                'name' => 'Inverness CT',
+                'logo' => 'clubs/inverness_ct.png',
+                'nationality_id' => 37,
+            ],
+            [
+                'name' => 'Queen of the South',
+                'logo' => 'clubs/queen_of_the_south.png',
+                'nationality_id' => 37,
+            ],
+            [
+                'name' => 'Nottingham Forest',
+                'logo' => 'clubs/nottingham.png',
+                'nationality_id' => 62,
+            ],
+            [
+                'name' => 'RB Leipzig',
+                'logo' => 'clubs/leipzig.png',
+                'nationality_id' => 2,
+            ],
+            [
+                'name' => 'FC Dordrecht',
+                'logo' => 'clubs/dordrecht.png',
+                'nationality_id' => 97,
+            ],
+            [
+                'name' => 'Newcastle United',
+                'logo' => 'clubs/newcastle.png',
+                'nationality_id' => 62,
+            ],
+            [
+                'name' => 'Shrewsbury Town',
+                'logo' => 'clubs/shrewsbury.png',
+                'nationality_id' => 62,
+            ],
+            [
+                'name' => 'Newport County',
+                'logo' => 'clubs/newport.png',
+                'nationality_id' => 62,
+            ],
+            [
+                'name' => 'Hartlepool United',
+                'logo' => 'clubs/hartlepool.png',
+                'nationality_id' => 62,
+            ],
         ];
 
         foreach ($clubs as $clubData) {

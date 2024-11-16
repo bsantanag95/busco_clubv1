@@ -25,5 +25,53 @@ class TrophySeeder extends Seeder
             'club_id' => null,
             'national_team_id' => 41,
         ]);
+        Trophy::create([
+            'name' => 'Sudamericano Sub 17',
+            'category' => null,
+            'level' => 'Selección',
+            'year' => 2017,
+            'organizer' => 'CONMEBOL',
+            'season_id' => null,
+            'player_id' => 9,
+            'nationality_id' => null,
+            'club_id' => null,
+            'national_team_id' => 15,
+        ]);
+        Trophy::create([
+            'name' => 'Copa Sudamericana',
+            'category' => null,
+            'level' => 'Internacional',
+            'year' => 2023,
+            'organizer' => 'CONMEBOL',
+            'season_id' => null,
+            'player_id' => 10,
+            'nationality_id' => null,
+            'club_id' => 44,
+            'national_team_id' => null,
+        ]);
+        Trophy::create([
+            'name' => 'Serie A',
+            'category' => 'Primera División',
+            'level' => 'Nacional',
+            'year' => null,
+            'organizer' => null,
+            'season_id' => 15,
+            'player_id' => 10,
+            'nationality_id' => 33,
+            'club_id' => 44,
+            'national_team_id' => null,
+        ]);
+        Trophy::create([
+            'name' => 'Supercopa',
+            'category' => 'Copa',
+            'level' => 'Nacional',
+            'year' => null,
+            'organizer' => null,
+            'season_id' => 13,
+            'player_id' => 10,
+            'nationality_id' => 33,
+            'club_id' => 44,
+            'national_team_id' => null,
+        ]);
     }
 }
