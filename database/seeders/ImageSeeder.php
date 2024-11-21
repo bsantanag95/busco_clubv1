@@ -140,6 +140,10 @@ class ImageSeeder extends Seeder
                 'player_id' => 11,
             ],
             [
+                'url' => 'images/adam_brooks2.jpg',
+                'player_id' => 11,
+            ],
+            [
                 'url' => 'images/matthew_bondswell.jpg',
                 'player_id' => 12,
             ],

@@ -30,7 +30,7 @@ const RandomProfile = ({ randomPlayers }) => {
                                 e.target.src = defaultPhoto;
                             }}
                         />
-                        <a className="text-main-color">{player.name}</a>
+                        <a className="text-teal-600">{player.name}</a>
                     </div>
                 ))}
             </div>
