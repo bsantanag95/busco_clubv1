@@ -48,7 +48,7 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">Nombre</div>
                         <div className="px-4 py-2 text-teal-600">
-                            {player.name}
+                            {player.surname} {player.forename}
                         </div>
                     </div>
                     <div className="grid grid-cols-2">
@@ -127,37 +127,44 @@ const About = ({ player, user, nationalities, positions, clubs }) => {
                             {player.agent ? player.agent : "Sin representante"}
                         </div>
                     </div>
-
                     <div className="grid grid-cols-2">
                         <div className="px-4 py-2 font-semibold">
                             Redes Sociales
                         </div>
                         <div className="px-4 py-2 flex space-x-2">
-                            {ig && (
-                                <a
-                                    href={ig}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img
-                                        src="/logos/instagram.png"
-                                        alt="Instagram"
-                                        className="w-6 h-6 object-cover shadow-md cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
-                                    />
-                                </a>
-                            )}
-                            {x && (
-                                <a
-                                    href={x}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img
-                                        src="/logos/x.png"
-                                        alt="X"
-                                        className="w-7 h-7 object-cover cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
-                                    />
-                                </a>
+                            {ig || x ? (
+                                <>
+                                    {ig && (
+                                        <a
+                                            href={ig}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <img
+                                                src="/logos/instagram.png"
+                                                alt="Instagram"
+                                                className="w-6 h-6 object-cover shadow-md cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
+                                            />
+                                        </a>
+                                    )}
+                                    {x && (
+                                        <a
+                                            href={x}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <img
+                                                src="/logos/x.png"
+                                                alt="X"
+                                                className="w-7 h-7 object-cover cursor-pointer hover:scale-110 hover:border-gray-300 hover:shadow-lg transition-transform duration-300"
+                                            />
+                                        </a>
+                                    )}
+                                </>
+                            ) : (
+                                <span className="text-teal-600">
+                                    No posee redes sociales
+                                </span>
                             )}
                         </div>
                     </div>

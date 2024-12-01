@@ -195,7 +195,7 @@ class PlayerSeeder extends Seeder
             [
                 'name' => 'Benjamín Osses',
                 'surname' => 'Benjamín Rodrigo',
-                'forename' => 'Huerta Miranda',
+                'forename' => 'Osses Miranda',
                 'slug' => 'benjamin-osses',
                 'gender' => 'Masculino',
                 'date_of_birth' => Carbon::parse('2002-06-24'),

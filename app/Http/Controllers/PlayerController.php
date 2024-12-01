@@ -153,7 +153,7 @@ class PlayerController extends Controller
             $player->surname = $validated['surname'] ?? $player->surname;
             $player->forename = $validated['forename'] ?? $player->forename;
 
-            $validated['name'] = $player->generateName();
+            // $validated['name'] = $player->generateName();
             $validated['slug'] = $player->generateSlug();
         }
 
