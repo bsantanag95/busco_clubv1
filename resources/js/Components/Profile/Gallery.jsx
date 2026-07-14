@@ -43,7 +43,7 @@ const Gallery = ({ player: { images = [], name, id }, user }) => {
             imageId,
             "images.destroy",
             "La imagen será eliminada",
-            "La imagen ha sido eliminada con éxito"
+            "La imagen ha sido eliminada con éxito",
         );
     };
 
@@ -81,11 +81,11 @@ const Gallery = ({ player: { images = [], name, id }, user }) => {
                         <ImageListItem
                             key={item.url}
                             sx={{ position: "relative" }}
+                            className="cursor-pointer"
                         >
                             <img
-                                className="cursor-pointer"
-                                srcSet={`${item.url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                                src={`/storage/${item.url}?w=164&h=164&fit=crop&auto=format`}
+                                src={`/storage/${item.url}`}
+                                srcSet={`/storage/${item.url} 2x`}
                                 alt={name}
                                 loading="lazy"
                                 onClick={() => handleImageClick(index)}
